@@ -1,0 +1,57 @@
+.layui-nav{
+    border-radius: 0px;
+    background-color: #de141d;
+    padding: 0px;
+}
+
+nav {
+    background-color: #de141d;
+}
+
+.layui-nav .layui-nav-item a {
+    color: white;
+    font-size: 16px;
+}
+
+.layui-nav .layui-nav-item {
+    margin-right: 5px;
+    line-height: 55px;
+}
+
+.layui-this {
+    background-color: #ba070f;
+}
+
+.layui-selete {
+    padding: 0px 50px;
+    background-color: #ba070f;
+    font-size: 16px;
+}
+
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
+    width: 0px;
+    height: 0px;
+}
+
+.layui-nav .layui-nav-item:hover {
+    background-color: #ba070f;
+}
+
+.layui-nav-child {
+    background-color: #f13a42;
+    border: 1px solid #f13a42;
+    top: 60px;
+}
+
+.layui-nav-child > dd > a:hover{
+    background: #ba070f !important;
+    color: white !important;
+}
+
+.layui-nav-item > .layui-this {
+    background: #ba070f !important;
+}
+
+.layui-nav .layui-nav-child dd.layui-this a, .layui-nav-child dd.layui-this {
+    background: #ba070f !important;
+}

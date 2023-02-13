@@ -1,0 +1,341 @@
+body {
+    background-color: #ffffff;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.current h2 {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.DetailsMain {
+    padding:20px;
+    margin:20px 0px;
+    background: white;
+}
+
+.BuyService {
+    height: 250px;
+    position: relative;
+}
+
+.BuyService .imgLogo {
+    width: 300px;
+    height: 250px;
+    position: relative;
+    display: inline-block;
+}
+
+.BuyService .imgLogo img {
+    width: 100%;
+    height: 100%;
+}
+
+.BuyService .imgLogo span {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background: rgba(102, 102, 102, 0.801);
+    height: 35px;
+    line-height: 35px;
+    color: white;
+}
+
+.UserContent {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    margin-left: 20px;
+    width: 500px;
+}
+
+.UserContent .name {
+    font-size: 18px;
+    color:#666;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+}
+
+.UserContent .charge {
+    font-size: 14px;
+    color:#666;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
+
+.charge span {
+    color: #de141d;
+}
+.UserContent .charge b {
+    font-size: 26px;
+}
+
+.userName {
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    color:#666;
+}
+
+.serviceObject {
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    color:#666;
+}
+
+.serviceMode {
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    color:#666;
+}
+
+.firstTypeName {
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    color:#666;
+}
+
+.buyButton {
+    margin-top: 15px;
+}
+
+.buyButton button:nth-last-child(2) {
+    background: #ec6941;
+}
+
+.buyButton button {
+    background: #308bf3;
+}
+
+.briefinfo {
+    float: right;
+    width: 230px;
+    height: 100%;
+    border:1px solid rgb(235, 235, 235);
+}
+
+.briefinfo h2 {
+    background: #308bf3;
+    height: 40px;
+    color: white;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left:20px;
+    margin-bottom: 15px;
+}
+
+.briefinfo span {
+    display: block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    padding-left:20px;
+}
+
+.briefinfo p {
+    padding-left:20px;
+    font-size: 14px;
+    height: 30px;
+    line-height:30px;
+    color: #666;
+}
+
+.briefinfo i {
+    font-size: 20px;
+    color: rgb(163, 163, 163);
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.information {
+    margin-top: 30px;
+}
+
+.infoleft {
+    border:1px solid rgb(235, 235, 235);
+    width:300px;
+    min-height: 600px;
+    display: inline-block;
+}
+
+.inofright {
+    width: 835px;
+    border:1px solid rgb(235, 235, 235);
+    min-height: 600px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.infoleft h2 {
+    height: 40px;
+    background: #f5f5f5;
+    line-height: 40px;
+    font-size: 16px;
+    padding-left: 20px;
+    color: #666;
+}
+
+.layui-tab-brief {
+    margin:0px !important;
+}
+
+.inofright .layui-tab-brief>.layui-tab-title .layui-this {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.layui-tab-title {
+    background: #f5f5f5;
+    color: #666;
+}
+.inofright .layui-tab-card>.layui-tab-title .layui-this:after {
+    border-bottom: 2px solid #308bf3 !important;
+}
+
+
+.infoleft .detailed {
+    height:460px;
+    position: relative;
+    padding: 0px 20px;
+}
+
+.infoleft .detailed .align {
+    font-size: 14px;
+    color:#666;
+    margin:10px 0px;
+    line-height: 20px;
+    line-height: 22px;
+    display: inline-block;
+    word-break:break-all
+}
+
+.layui-tab-content {
+    min-height: 530px;
+    position: relative;
+    padding:0px !important;
+}
+
+.layui-tab-content .list {
+    margin:25px 0px;
+    color: #666;
+    font-size:14px;
+    padding: 0px 20px !important;
+}
+
+.nav_layui-this{
+    background-color: #ba070f;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.nav_layui-this a span {
+    margin-right: 8px;
+}
+
+.ServiceIntr {
+    margin-top: 40px;
+}
+
+.ServiceIntr h2 {
+    height: 40px;
+    line-height: 40px;
+    margin:0px 20px;
+    font-size:18px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ServiceIntr .content {
+    padding: 17px;
+    min-height: 175px;
+}
+
+.inofright .layui-tab {
+    margin: 0px;
+}
+
+.inofright  .layui-tab-card {
+    box-shadow: 0px 0px 0px !important;
+    border:none;
+}
+.inofright .layui-tab-card>.layui-tab-title .layui-this {
+    background: #f5f5f5;
+}
+
+.inofright .layui-tab-card>.layui-tab-title .layui-this:after{
+    border-bottom: 2px solid #308bf3;
+    border: none;
+}
+
+.inofright .layui-tab-title {
+    border:none;
+}
+
+.inofright .layui-tab-card > .layui-tab-title {
+    background: #f5f5f5;
+}
+
+.two .tab_item div {
+    font-size: 14px;
+    color: #666;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    margin: 0px 20px;
+}
+
+.two div span {
+    display: inline-block;
+}
+
+.two div p {
+    float: right;
+}
+
+.two .tab_item {
+    min-height: 500px;
+}
+
+#laypage {
+    float: right;
+    margin-right:20px;
+}

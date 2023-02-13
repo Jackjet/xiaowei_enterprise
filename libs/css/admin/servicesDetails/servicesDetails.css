@@ -1,0 +1,232 @@
+body {
+    margin:0px;
+    padding: 0px;
+}
+
+.iframe_title {
+    height: 40px;
+    background: #fbfbfb;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    line-height: 40px;
+    color: #666;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.iframe_title h2 {
+    padding-right:20px;
+}
+
+.iframe_title h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+    vertical-align: top;
+}
+
+.iframe_title h2 .search {
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+    width: 20px;
+    text-align: center;
+}
+
+.iframe_title h2 p i {
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 39px;
+}
+
+.iframe_title h2 p a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.iframe_title h2 a {
+    display: inline-block;
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+    vertical-align: top;
+}
+
+.iframe_title h2 > i {
+    color: rgb(94, 94, 94);
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.iframe_title h2 input {
+    width: 20%;
+    height: 30px;
+    float: right;
+    line-height: 30px;
+    font-size:12px;
+    margin-top: 5px;
+    padding-right: 30px;
+}
+
+.templet {
+    text-align: center;
+    color: #666;
+    padding: 0px 20px;
+    margin-top: 20px;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.templet .header {
+    height: 210px;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.layui_image {
+    width: 280px;
+    height: 100%;
+    float: left;
+    position: relative;
+    margin-right: 20px;
+}
+
+.templet .header > .layui_image img {
+    width: 100%;
+    height: 100%;
+}
+
+.layui_image span {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 30px;
+    color: white;
+    left: 0px;
+    line-height: 30px;
+    background: rgba(0, 0, 0, 0.322);
+}
+
+.right_main {
+    height: 100%;
+    width: 500px;
+    float: left;
+}
+
+.right_main span {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: left;
+    color: #666;
+}
+
+.right_main .name {
+    font-size: 16px;
+}
+
+.right_main span p {
+    color: #de141d;
+    display: inline-block;
+}
+
+.layui_tab {
+    margin-top: 20px;
+    min-height: 700px;
+}
+
+.layui-tab {
+    margin: 0px 0 !important;
+}
+
+.layui-this::after {
+    content: '';
+    border-bottom:2px solid #308bf3 !important;
+    position: absolute;
+}
+
+.layui-tab-content {
+    min-height: 640px;
+}
+
+.tab_info {
+    height: 230px;
+}
+
+.tab_info span {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+}
+
+.tab_info span p {
+    display: inline-block;
+    color: #de141d;
+}
+
+.introduce h2{
+    border-bottom:1px solid #cccccc;
+    margin: 0px 10px;
+    height: 50px;
+    line-height: 50px;
+    color: rgb(65, 65, 65);
+    position: relative;
+}
+
+.introduce h2::after {
+    content: '';
+    position: absolute;
+    width: 83px;
+    border:1px solid #333333;
+    bottom: -1px;
+    left: 0px;
+}
+
+.introduce_info {
+    min-height: 360px;
+    padding: 10px;
+}
+
+.tabas {
+    min-height: 640px;
+}
+
+.tabas ul{
+    min-height: 580px;
+    position: relative;
+}
+
+
+.tabas li {
+    height: 50px;
+    line-height: 50px;
+    margin: 0px 10px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.tabas li span {
+    float: left;
+}
+
+.tabas li p {
+    float: right;
+}
+
+#laypage {
+    float: right;
+}
+
+.iframe_title h2 a {
+    cursor: pointer;
+}

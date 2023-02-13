@@ -1,0 +1,71 @@
+body {
+    background-color: #f6f7fb;
+}
+
+.banner img {
+    width: 100%;
+    min-width: 1200px;
+}
+
+.banner {
+    margin-bottom: 20px;
+}
+
+.about_nav {
+    width: 270px;
+    height: 300px;
+    margin-top: 10px;
+    background: white;
+}
+
+.about_box {
+    background: white;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    min-height: 500px;
+}
+
+.about_nav h2 {
+    background: #de141d;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    padding-left: 20px;
+}
+
+.about_nav ul li {
+    float: left;
+    font-size:16px;
+    background: white;
+    color: #666;
+    border-bottom: 1px dashed rgb(211, 211, 211);
+    height: 50px;
+    line-height: 50px;
+    margin-left: 20px;
+}
+
+.about_nav ul li i {
+    margin-left: 120px;
+}
+
+.layui-this {
+    color: #de141d !important;
+}
+
+.layui-badge-rim, .layui-colla-content, .layui-colla-item, .layui-collapse, .layui-elem-field, .layui-form-pane .layui-form-item[pane], .layui-form-pane .layui-form-label, .layui-layedit, .layui-layedit-tool, .layui-quote-nm, .layui-select, .layui-tab-bar, .layui-tab-card, .layui-tab-title, .layui-tab-title .layui-this:after, .layui-textarea {
+    border: none !important;
+}
+
+.about_box {
+    padding: 20px 0px;
+}
+
+.layui-tab-content{
+    margin: 0px 20px;
+}
+
+.show {
+    display: block;
+}

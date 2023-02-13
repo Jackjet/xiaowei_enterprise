@@ -1,0 +1,104 @@
+body {
+    background-color: #f6f7fb;
+}
+
+.current {
+    margin: 0px 20px;
+    padding: 20px 0px;
+}
+
+.current h2 {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+    cursor: pointer;
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.cloud_main {
+    background: white;
+}
+
+.layui-form {
+    margin: 0 auto;
+}
+
+.carousel_page {
+    border:1px solid #e6e6e6;
+    margin:50px 20px 20px 20px;
+}
+
+.ul_list {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+footer{
+    margin-top: 20px;
+}
+
+
+.ul_list i {
+    margin:auto;
+    color: white;
+    font-size:35px;
+    font-weight:bold;
+    background: #52C41A;
+    padding: 20px;
+    line-height: 80px;
+}
+
+
+.ul_list .text {
+    font-size: 18px;
+    color: rgb(128, 128, 128);
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.ul_list .text_text {
+    font-size: 16px;
+    color: rgb(128, 128, 128);
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.text_text span {
+    color: #de141d;
+}
+
+.nav_layui-this{
+    background-color: #ba070f;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.nav_layui-this a span {
+   margin-right: 8px;
+}

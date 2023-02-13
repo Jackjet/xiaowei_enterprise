@@ -1,0 +1,364 @@
+body {
+    background-color: #f6f7fb;
+}
+
+.banner img{
+    width: 100%;
+    min-width: 1200px;
+    height:400px;
+}
+
+.layui-list-city {
+    background: white;
+    margin: 20px 0px;
+    width: 97%;
+    height: 420px;
+    border-top: 3px solid #de141d;
+}
+
+
+.layui-list-city h2 {
+    color: #de141d;
+    font-size: 16px;
+    padding: 10px 20px;
+    padding-left: 30px;
+    font-weight: 600;
+    position: relative;
+}
+
+.layui-list-city h2::after {
+    content: '';
+    width: 3px;
+    height: 19px;
+    background-color: #de141d;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+.layui-list-city h2 span {
+    color: #999;
+    font-weight: normal;
+    float: right;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.layui-list-city h2 span i {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+.news-list li {
+    height: 93px;
+    border-bottom: 1px dashed #ccc;
+    margin:0px 20px;
+}
+.news-list a {
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+}
+
+.news-list li:nth-last-child(1) {
+    border:none;
+}
+
+.news-list li img {
+    height: 70px;
+    width: 110px;
+    margin: 10px 20px 0px 0px;
+    display: inline-block;
+}
+
+.layui-text-list {
+    position: absolute;
+    top: 25px;
+}
+
+.layui-text-list code {
+    display: inline-block;
+    width: 250px;
+}
+
+
+.layui-text-list .layui-elip {
+    display: inline-block;
+    font-size: 14px;
+    width: 400px;
+}
+
+.layui-text-list .layui-elip:nth-child(1){
+    width: 367px;
+    margin-right: 10px;
+}
+
+.layui-text-list p {
+    margin-top: 5px;
+    color: #999;
+}
+
+.PolicyInterpr li {
+    margin: 0px 20px;
+    padding: 12px 0px;
+    padding-right: 0;
+    display: block;
+    color: #000;
+    font-size: 14px;
+    position: relative;
+    border-bottom: 1px dashed #ccc;
+}
+
+.PolicyInterpr li:nth-last-child(1) {
+    border:none;
+}
+
+.PolicyInterpr li span {
+    width: 70%;
+    display: inline-block;
+}
+
+.PolicyInterpr li p {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+}
+
+.Industry-list{
+    position: relative;
+}
+
+.Industry-list li {
+    width: 60%;
+    height:47px;
+    line-height: 47px;
+    padding: 0px 20px;
+}
+
+.layui-list-city ul {
+    height: 370px;
+}
+
+.Industry-list li a {
+    display: inline-block;
+    width:100%;
+    height:100%;
+}
+
+.Industry-list span {
+    width: 35%;
+    position: absolute;
+    right:20px;
+}
+
+.Industry-list .content-img {
+    top:20px;
+}
+
+.Industry-list .content-img1 {
+    bottom:10px;
+}
+
+.Industry-list span img {
+    width: 100%;
+}
+
+.training li {
+    width: 250px;
+    height: 160px;
+    float:left;
+    margin: 20px 0px 0px 30px;
+    position: relative;
+}
+
+.training li img {
+    width: 100%;
+    height: 110px;
+}
+
+.apply {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    background-color: rgb(222, 20, 29, 0.5);
+    border-radius: 50%;
+    top: 85px;
+    left: 42%;
+    text-align: center;
+    color: #fff;
+}
+
+.training li span {
+    text-align: center;
+    width:100%;
+    display:inline-block;
+    font-size:14px;
+    padding: 12px 0px 3px 0px;
+    color:#666;
+}
+
+.training li p {
+    display: inline-block;
+    text-align: center;
+    width:100%;
+    font-size: 12px;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.nodata {
+    font-size: 14px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 150px;
+    text-align: center;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -55px;
+    color: #999;
+}
+
+.nodata i {
+    font-size: 18px;
+    position: absolute;
+    left: 15px;
+    top: -1px;
+}
+
+.news-list li a:hover {
+    cursor: pointer;
+}
+
+.Industry-list li a:hover {
+    cursor: pointer;
+}
+
+.PolicyInterpr li a:hover {
+    cursor: pointer;
+}
+
+.NotThe {
+    position: absolute;
+    width: 75px;
+    background: #999;
+    color: white;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.NotThe div {
+    margin-left: 20px;
+}
+
+.NotThe::after {
+    content: '';
+    width:0;
+    height:0;
+    border-width:0 12px 12px;
+    border-style:solid;
+    border-color:transparent transparent transparent #999;
+    position: absolute;
+    top: 0px;
+    left:75px;
+}
+
+.NotThe::before {
+    content: '';
+    width:0;
+    height:0;
+    border-width:12px 12px 0;
+    border-style:solid;
+    border-color:transparent transparent transparent #999;
+    position: absolute;
+    bottom: 0px;
+    left:75px;
+}
+
+.Have {
+    position: absolute;
+    width: 75px;
+    background: #de141d;
+    color: white;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.Have div {
+    margin-left: 20px;
+}
+
+.Have::after {
+    content: '';
+    width:0;
+    height:0;
+    border-width:0 12px 12px;
+    border-style:solid;
+    border-color:transparent transparent transparent #de141d;
+    position: absolute;
+    top: 0px;
+    left:75px;
+}
+
+.Have::before {
+    content: '';
+    width:0;
+    height:0;
+    border-width:12px 12px 0;
+    border-style:solid;
+    border-color:transparent transparent transparent #de141d;
+    position: absolute;
+    bottom: 0px;
+    left:75px;
+}
+
+
+.signUp {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background: rgb(100, 100, 100, 0.7);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    left: 50%;
+    margin-left: -30px;
+    top: 40%;
+    margin-top: -30px;
+}
+
+.banner {
+    min-width: 1200px;
+}
+
+
+.right_image {
+    width: 180px;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    height: 90%;
+}
+
+.right_image img {
+    width: 100%;
+    height: 100px;
+}
+
+.right_image img:nth-child(1) {
+    margin-bottom: 80px;
+}

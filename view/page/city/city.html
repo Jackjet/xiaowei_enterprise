@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/city/city.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../public/common/js/frameWork.js"></script>
+    <script type='text/javascript' src='../../../libs/js/city/city.js'></script>
+    <title>唐山小微公共服务平台</title>
+</head>
+
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <script id="nav-cell" type="text/html">
+                        {{each array as value i}}
+                            <li class="layui-nav-item {{value.this}}">
+                                <a href="{{value.url}}">{{value.title}}</a>
+                            </li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='layui-row'>
+        <div class='layui-col-xs12 banner'>
+            <div class="layui-carousel" id="banner">
+                <div carousel-item>
+                    <script id="banner-cell" type="text/html">
+                        {{each content as value i}}
+                            <div>
+                                <a href='{{value.url}}'>
+                                    <img src="{{value.http}}{{value.img}}" />
+                                </a>
+                            </div>
+                        {{/each}}
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='layui-main'>
+        <div class='layui-row'>
+            <div class="layui-col-xs6">
+                <div class='layui-list-city'>
+                    <h2>新闻资讯<span class='new_more' onclick='SubColumn("news","xwzx_")'>更多<i class='layui-icon'>&#xe65b;</i></span></h2>
+                    <ul class='news-list'>
+                        <div data-loader="circle" class='loading new-loading'></div>
+                        <script id="news-cell" type="text/html">
+                            {{each content as value i}}
+                                <li>
+                                    <a href="{{value.url}}">
+                                        <img src="{{value.img}}" />
+                                        <div class="layui-inline layui-text-list">
+                                            <h3>
+                                                <span class='layui-elip'>{{value.title}}</span>
+                                                <span class='layui-elip'>{{value.date}}</span>
+                                            </h3>
+                                            <p class='layui-elip'>{{value.digest}}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            {{/each}}
+                            {{if content.length === 0}}
+                                <div class="nodata">
+                                    <i class="iconfont TanSantishi"></i>暂无数据 ！
+                                </div>
+                            {{/if}}
+                        </script>
+                    </ul>
+                </div>
+            </div>
+            <div class="layui-col-xs6">
+                <div class='layui-list-city' style='float:right;'>
+                    <h2>政策解读<span class='Policy_more' onclick='SubColumn("policy","zcjd_0000")'>更多<i class='layui-icon'>&#xe65b;</i></span></h2>
+                    <ul class='PolicyInterpr'>
+                        <div data-loader="circle" class='loading Policy-loading'></div>
+                        <script id="Policy-cell" type="text/html">
+                            {{each content as value i}}
+                                <li>
+                                    <a href="{{value.url}}">
+                                        <span class='layui-elip'>{{value.title}}</span>
+                                        <p>{{value.date}}</p>
+                                    </a>
+                                </li>
+                            {{/each}}
+                            {{if content.length === 0}}
+                                <div class="nodata">
+                                    <i class="iconfont TanSantishi"></i>暂无数据 ！
+                                </div>
+                            {{/if}}
+                        </script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class='layui-row'>
+            <div class="layui-col-xs6">
+                <div class='layui-list-city'>
+                    <h2>特色产业<span class='Industry_more' onclick='SubColumn("features","tscy_")'>更多<i class='layui-icon'>&#xe65b;</i></span></h2>
+                    <ul class='Industry-list'>
+                        <div data-loader="circle" class='loading Industry-loading'></div>
+                        <script id="Industry-cell" type="text/html">
+                            {{each content as value i}}
+                                <li>
+                                    <a href="{{value.url}}" class='layui-elip'>{{value.title}}</a>
+                                </li>
+                            {{/each}}
+                            <div class='right_image'>
+                                {{if content[0]}}
+                                    <img src='{{content[0].http}}{{content[0].img}}' />
+                                {{/if}}
+                                {{if content[1]}}
+                                    <img src='{{content[1].http}}{{content[1].img}}' />
+                                {{/if}}
+                            </div>
+                            {{if content.length === 0}}
+                                <div class="nodata">
+                                    <i class="iconfont TanSantishi"></i>暂无数据 ！
+                                </div>
+                            {{/if}}
+                        </script>
+                    </ul>
+                </div>
+            </div>
+            <div class="layui-col-xs6">
+                <div class='layui-list-city' style='float:right;'>
+                    <h2>培训活动<span class='training_more'>
+                        <a href="../training/training.html?level==U2Vjb25kbGV2ZWw=" style='color:#999'>更多</a>
+                        <i class='layui-icon'>&#xe65b;</i></span>
+                    </h2>
+                    <ul class='training'>
+                        <div data-loader="circle" class='loading training-loading'></div>
+                        <script id="training-cell" type="text/html">
+                            {{each content as value i}}
+                                {{if value.status === '0'}}
+                                    <li>
+                                        <a href="../training/trainingDetails/trainingDetails.html?id={{value.id}}&level=TGV2ZWx0aHJlZQ==">
+                                            <div class='Have'>
+                                                <div>即将开始</div>
+                                            </div>
+                                            <img src="{{value.http}}{{value.image}}">
+                                            <div class="apply">报名</div>
+                                            <span class='layui-elip'>{{value.name}}</span>
+                                            <p class='layui-elip'>活动时间：{{value.startTime}}</p>
+                                        </a>
+                                    </li>
+                                {{/if}}
+                                {{if value.status === '1'}}
+                                    <li>
+                                        <a href="../training/trainingDetails/trainingDetails.html?id={{value.id}}&level=TGV2ZWx0aHJlZQ==">
+                                            <div class='NotThe'>
+                                                <div>已开始</div>
+                                            </div>
+                                            <img src="{{value.http}}{{value.image}}">
+                                            <span class='layui-elip'>{{value.name}}</span>
+                                            <p class='layui-elip'>活动时间：{{value.startTime}}</p>
+                                        </a>
+                                    </li>
+                                {{/if}}
+                                {{if value.status === '2'}}
+                                    <li>
+                                        <a href="../training/trainingDetails/trainingDetails.html?id={{value.id}}&level=TGV2ZWx0aHJlZQ==">
+                                            <div class='NotThe'>
+                                                <div>已结束</div>
+                                            </div>
+                                            <img src="{{value.http}}{{value.image}}">
+                                            <span class='layui-elip'>{{value.name}}</span>
+                                            <p class='layui-elip'>活动时间：{{value.startTime}}</p>
+                                        </a>
+                                    </li>
+                                {{/if}}
+                            {{/each}}
+                            {{if content.length === 0}}
+                                <div class="nodata">
+                                    <i class="iconfont TanSantishi"></i>暂无数据 ！
+                                </div>
+                            {{/if}}
+                        </script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

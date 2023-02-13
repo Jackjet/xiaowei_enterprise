@@ -1,0 +1,497 @@
+body {
+    background-color: #f6f7fb;
+}
+
+.banner_main {
+    width: 100%;
+    min-width: 1200px;
+ }
+
+.banner img{
+    width: 100%;
+    height:400px;
+}
+
+#banner {
+    width: 100%;
+    height: 416px !important;
+}
+
+#bannerSlisp {
+    width: 100%;
+    height: 300px !important;
+}
+
+.layui-carousel img {
+    width: 100%;
+    height: 100%;
+}
+
+.left_banner {
+    height: 300px;
+    width: 98%;
+    background: white;
+}
+
+.right_list {
+    float: right;
+    height: 300px;
+    width: 98%;
+    background: white;
+}
+
+
+.right_list h2 {
+    color: #de141d;
+    font-size: 16px;
+    padding: 10px 20px;
+    padding-left: 30px;
+    font-weight: 600;
+    position: relative;
+}
+
+.right_list h2::after {
+    content: '';
+    width: 3px;
+    height: 19px;
+    background-color: #de141d;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+.right_list h2 span {
+    color: #999;
+    font-weight: normal;
+    float: right;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.right_list h2 span i {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+
+.latest li {
+    padding: 12px 20px;
+    border-bottom: 1px dashed rgb(223, 223, 223);
+}
+
+.latest li:nth-last-child(1) {
+    border:none;
+}
+
+.latest li img {
+    width: 80px;
+    margin-right: 10px;
+    float: left;
+}
+
+.latest li a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;    
+}
+
+.latest li div {
+    float: right;
+    width: 82%;
+    height: 100%;
+}
+
+.latest li div span {
+    float: left;
+    width: 300px;
+}
+
+.latest li div p {
+    float: right;
+    color: #999;
+}
+
+.latest li a .digest {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    color: #999;
+}
+
+.mainContainer {
+    background: white;
+    margin-top:20px
+}
+
+.mainContainer h2 {
+    color: #de141d;
+    font-size: 16px;
+    padding: 10px 20px;
+    padding-left: 30px;
+    font-weight: 600;
+    position: relative;
+    border-top:2px solid  #de141d;
+}
+
+.mainContainer h2::after {
+    content: '';
+    width: 3px;
+    height: 19px;
+    background-color: #de141d;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+.mainContainer h2 span {
+    color: #999;
+    font-weight: normal;
+    float: right;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.mainContainer h2 span i {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+.case {
+    width: 98%;
+    /*height: 482px;*/
+    height: 312px;
+    background: white;
+}
+
+.case h2 {
+    color: #de141d;
+    font-size: 16px;
+    padding: 10px 20px;
+    padding-left: 30px;
+    font-weight: 600;
+    position: relative;
+    border-top:2px solid  #de141d;
+}
+
+.case h2::after {
+    content: '';
+    width: 3px;
+    height: 19px;
+    background-color: #de141d;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+.case h2 span {
+    color: #999;
+    font-weight: normal;
+    float: right;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.case h2 span i {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+.Service {
+    float:right;
+    width: 98%;
+    background: white;
+    border-top:2px solid  #de141d;
+}
+
+.Service .layui-tab {
+    padding: 0px 20px;
+}
+
+.Service .layui-tab .layui-tab-title {
+    border:none;
+}
+
+.Service .layui-tab .layui-this{
+    background: #ba070f !important;
+    color: white;
+}
+
+.Service .layui-tab .layui-this::after {
+    border: none !important;
+}
+
+.Service .layui-tab li {
+    background: #bfbfbf;
+    color: white;
+    padding: 0px 25px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.layui-tab-title h2 {
+    color: #999;
+    font-weight: normal;
+    float: right;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+
+.layui-tab-title h2 i {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+.recomService {
+    border:none;
+}
+
+.recomService li {
+    margin-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    background: #f5f5f5;
+}
+
+.recomService .layui-this {
+    color:white !important;
+    border: none;
+    background: #ba070f;
+}
+
+.recomService  .layui-this:after {
+    border:none !important;
+}
+
+.main_content {
+    padding: 20px 20px;
+    min-height: 100px;
+    position: relative;
+}
+
+.main_content li {
+    display: inline-block;
+    width: 188px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.main_content li a {
+    display: block;
+    width: 94%;
+    margin: 0 auto;
+    height: 100%;
+    border: 1px solid #e7e7e7;
+}
+
+.main_content li a img {
+    width: 100%;
+    height: 90px;
+}
+
+.main_content li a p {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin:5px 0px;
+    color: #999;
+}
+
+.CludeEnterprise {
+    min-height: 150px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding: 0px 20px 20px 20px;
+}
+
+.left_banner .layui-carousel > [carousel-item] {
+    background: white;
+}
+
+.CludeEnterprise li {
+    height: 80px;
+    float: left;
+    width: 220px;
+    margin:20px 12px 40px 0px;
+}
+
+.CludeEnterprise li a {
+    vertical-align: top;
+    display:inline-block;
+}
+
+.CludeEnterprise  li img {
+    width: 100%;
+    height: 100px;
+    border:1px solid rgb(223, 223, 223);
+}
+
+.CludeEnterprise  li p {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: #999;
+    margin-top: 5px;
+}
+
+.typical li{
+    margin: 0px 20px;
+    height: 52px;
+    line-height: 52px;
+    border-bottom: 1px dashed rgb(201, 201, 201);
+}
+
+.typical li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.typical li:nth-last-child(1) {
+    border: none;
+}
+
+.typical li span {
+    display: inline-block;
+    width: 70%;
+}
+
+.typical li p {
+    float: right;
+    color: rgb(179, 179, 179);
+}
+
+.Service .layui-tab-content {
+    /*height: 410px;*/
+    height: 240px;
+}
+
+.recommend {
+    width: 50%;
+    float: left;
+    margin-top: 15px;
+}
+
+.recommend a {
+    display:inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.recommend span {
+    display:block;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    color: #666;
+}
+
+.Industry_more {
+    height:30px !important;
+    line-height: 35px !important;
+}
+
+.recommend img {
+    width: 90%;
+    display: block;
+    height: 150px;
+    margin: 0 auto;
+    border:1px solid rgb(226, 226, 226); 
+}
+
+.recommend div span {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    height: 46px;
+    line-height: 50px;
+    /*padding-left: 10px;*/
+}
+
+.recommend div p {
+    display: block;
+    /*padding-left: 10px;*/
+    width: 100%;
+    height: 30px;
+    line-height:30px;
+    color: rgb(184, 184, 184);
+}
+
+.TopMain {
+    height: 47px;
+    font-size: 12px;
+}
+
+.TopMain a {
+    display:inline-block;
+    width: 100%;
+    height: 100%;
+}
+.TopMain .top-info {
+    float: left;
+    width: 165px;
+}
+
+.TopMain .top-top {
+    width: 24px;
+    margin-top: 10px;
+    float: left;
+}
+.TopMain .top-logo {
+    width: 80px;
+    height: 42px;
+    margin: 0px 15px;
+    float: left;
+    border:1px solid rgb(226, 226, 226); 
+}
+
+.TopMain .top-info span {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    height: 25px;
+    line-height: 30px;
+}
+
+.TopMain .top-info p {
+    display: block;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    color: rgb(184, 184, 184);
+}
+.TopMain .top-line {
+    float: left;
+    width: 170px;
+    height: 100%;
+}
+
+.TopMain .layui-progress {
+    margin-top: 20px;
+}
+
+.TopMain .top-num {
+    float: left;
+    width: 60px;
+    margin-left: 10px;
+    line-height: 46px;
+    color: #FD6668;
+} 
+
+.Service_tab {
+    padding: 10px 0px 0px 0px !important;
+}

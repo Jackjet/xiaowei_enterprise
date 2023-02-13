@@ -1,0 +1,249 @@
+body {
+    background-color: #f6f7fb;
+}
+
+.banner_main {
+   width: 100%;
+   min-width: 1200px;
+}
+
+.layui-carousel {
+    width: 100%;
+    height: 416px !important;
+}
+
+.layui-carousel img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav_layui-this{
+    background-color: #ba070f;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.nav_layui-this a span {
+   margin-right: 8px;
+}
+
+.process {
+    text-align: center;
+    color: #666;
+}
+
+.layui-process {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+}
+
+.layui-process  span{
+    display: inline-block;
+    height:40px;
+    border-bottom: 2px solid #ba070f;
+    font-size:20px;
+}
+
+.process-main {
+    min-height: 100px;
+    margin-top: 20px;
+    position: relative;
+}
+
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+
+.process-main ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    height: 150px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.process-main ul li img {
+    width:40px;
+    height: 40px;
+    display: block;
+    margin-top:40px;
+    margin-left: 41%;
+}
+
+.process-main ul li span {
+    vertical-align: top;
+    display: inline-block;
+    height:50px;
+    line-height: 50px;
+}
+
+.process-main ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.layui-process p {
+    font-size:14px;
+    position: absolute;
+    right: 40px;
+    top: 8px;
+}
+
+.process-main ul li:hover{
+    background: #fbfcff;
+    box-shadow: 5px 5px 30px rgb(224, 224, 224);
+}
+
+.layui-process i {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.classProcess {
+    background: white;
+    padding: 20px 0px;
+    margin-bottom: 20px;
+}
+
+.layui-tab .layui-this {
+    background: white;
+}
+
+.layui-tab {
+    margin-top: 30px;
+}
+
+.layui-tab .layui-tab-content {
+    border:1px solid #eeeeee;
+    border-top:none;
+    position: relative;
+    padding: 10px 20px;
+    min-height: 50px !important;
+}
+
+.layui-tab-content ul li {
+    display: inline-block;
+    padding:8px 0px;
+    margin-right: 20px;
+    color: #666;
+    cursor: pointer;
+}
+
+.layui-tab-content  ul {
+    min-height: 50px;
+}
+
+.list_content {
+    margin-top: 30px;
+    min-height: 200px;
+    position: relative;
+    text-align: center;
+}
+
+.list_content .border {
+    cursor: pointer;
+}
+
+.list_content .g_ul img{
+    width: 60%;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.list_content .g_ul span {
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #666;
+}
+
+.list_content .g_ul p {
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    color: #ba070f;
+    font-size:14px;
+}
+
+.border {
+    border:1px solid rgb(228, 228, 228);    
+}
+
+.nodata {
+    padding: 0px !important;
+}
+
+.layui-process p {
+    cursor: pointer;
+}
+
+.dataUp {
+    padding:20px 0px;
+    margin-top:40px;
+}
+
+.dataUp ul {
+    display: inline-block;
+    width: 100%;
+}
+
+.dataUp ul li {
+    height: 40px;
+    line-height:40px;
+    float: left;
+    width: 33%;
+}
+
+
+.color {
+    color: #de141d !important;
+}
+
+#laypage{
+    float: right;
+    margin-top: 40px;
+}
+
+
+.current h2 {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}

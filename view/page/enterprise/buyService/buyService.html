@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/enterprise/buyService/buyService.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="../../../../public/common/js/frameWork.js"></script>    
+    <script type='text/javascript' src='../../../../libs/js/enterprise/buyService/buyService.js'></script>
+    <title>唐山小微公共服务平台</title>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <script id="nav-cell" type="text/html">
+                        {{each array as value i}}
+                            <li class="layui-nav-item {{value.this}}">
+                                <a href="{{value.url}}">{{value.title}}</a>
+                            </li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='layui-row banner'>
+        <div class='layui-main CallBack'>
+            <div data-loader="circle" class='loading service-loading'></div>
+            <script id="service-cell" type="text/html">
+                <div class='serviceLogo'>
+                    <img src="{{logo}}"/>
+                </div>
+                <div class='serviceBuy'>
+                    <span class='layui-elip'>{{name}}</span>
+                    <p>{{introduce}}</p>
+                    <div class='spec'>
+                        <span>规格：</span>
+                        <ul class='BuySpec'>
+                            {{each specs as value i}}
+                                <li onclick='SelectSpecIndex(this)' data-id='{{value.prices}}'>
+                                    {{value}}G
+                                    <div><i class='layui-icon'>&#xe605;</i></div>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class='spec'>
+                        <span>周期：</span>
+                        <ul class='BuyCycle'>
+                            {{each cycle as value i}}
+                                <li class='layui-disabled' onclick='SelectCycleIndex(this)'>
+                                    {{value}}年
+                                    <div><i class='layui-icon'>&#xe605;</i></div>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class='spec' style='height:40px;'>
+                        <span>价格：<dd class='BuyPrice'>￥0.00</dd></span>
+                    </div>
+                    <div class='spec submit'>
+                        <span class='BuySubmit'>立即购买</span>
+                        <span class='consulting'>
+                            <i class='layui-icon'>&#xe6fc;</i>
+                            <p onclick='notOpen();'>咨 询</p>
+                        </span>
+                    </div>
+                </div>
+            </script>
+            <div class='contact'>
+                <div class='contact_item'>
+                    <h2>服务商联系方式</h2>
+                    <div data-loader="circle" class='loading contact-loading'></div>
+                    <script id="contact-cell" type="text/html">
+                        <ul>
+                            <li>
+                                <i class='iconfont TanSanxinxi'></i>
+                                <span>服务商联系方式：</span>
+                                <p>
+                                    {{ if IfLogin == ''}}
+                                        {{email.substr(0, 3) + "****" + email.substr(7)}}
+                                    {{else}}
+                                        {{email}}
+                                    {{/if}}
+                                </p>
+                            </li>
+                            <li>
+                                <i class='iconfont TanSandianhua'></i>
+                                <span>联系电话：</span>
+                                <p>
+                                    {{ if IfLogin == ''}}
+                                        {{phone.substr(0, 3) + "****" + phone.substr(7)}}
+                                    {{else}}
+                                        {{phone}}
+                                    {{/if}}
+                                </p>
+                            </li>
+                            <li>
+                                <i class='iconfont TanSanshijian3'></i>
+                                <span>服务时间：</span>
+                                <p>{{time}}</p>
+                            </li>
+                        </ul>
+                    </script>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='layui-main' style='background: white'>
+        <div class='active-buy-detail'>
+            <div class='current'>
+                <h2>
+                    <p>
+                        <i class='layui-icon'>&#xe68e;</i>您的位置：
+                    </p>
+                    <a href="../enterprise.html?level=U2Vjb25kbGV2ZWw=">企业上云</a>
+                    <i class='layui-icon type0'>&#xe602;</i>
+                    <a href="../service/service.html?type=eWZmcw==&level=TGV2ZWx0aHJlZQ==">云服务</a>
+                    <i class='layui-icon type0'>&#xe602;</i>
+                    <a href="javascript:;">服务详情</a>
+                </h2>
+            </div>
+            <div class='webHtml'></div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

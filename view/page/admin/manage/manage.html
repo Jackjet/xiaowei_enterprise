@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/admin/manage/manage.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layarea.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+    
+    <script type='text/javascript' src='../../../../libs/js/admin/manage/manage.js'></script>
+    <title></title>
+</head>
+<body>
+    <div class='iframe_title'>
+        <h2>
+            <p>
+                <i class='layui-icon'>&#xe68e;</i>
+                <span>当前位置：</span>
+            </p>
+            <a href='javascript:;' onclick="returnCallBack()">个人设置</a>
+            <i class='layui-icon'>&#xe602;</i>
+            <a href='javascript:;' onclick="returnCallBack()">认证管理</a>
+            <i class='layui-icon'>&#xe602;</i>
+            <a>立即认证</a>
+        </h2>
+    </div>
+    <div class='templet'>
+        <div class="layui-collapse" lay-accordion lay-filter="layui">
+            <div class="layui-colla-item" id='enterprise'>
+                <h2 class="layui-colla-title" onclick="enterprise(this)" data-id='1'>企业信息</h2>
+                <div class="layui-colla-content contentBox">
+                    <div class='enterprise'>
+                        <div data-loader="circle" class='loading hot-loading'></div>
+                        <script id="admin-cell" type="text/html">
+                            {{if status}}
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">企业名称：</label>
+                                    <div class="layui-input-block">
+                                        {{name}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">联系人：</label>
+                                    <div class="layui-input-block">
+                                        {{contact}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">联系电话：</label>
+                                    <div class="layui-input-block">
+                                        {{contactPhone}}
+                                    </div>
+                                </div>
+                                {{if area}}
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">所属地区：</label>
+                                        <div class="layui-input-block">
+                                            {{area.split(',')[0]}} &nbsp; {{area.split(',')[1]}} &nbsp; {{area.split(',')[2]}}
+                                        </div>
+                                    </div>
+                                {{/if}}
+                                {{if address}}
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">详细地址：</label>
+                                        <div class="layui-input-block">
+                                            {{address}}
+                                        </div>
+                                    </div>
+                                {{/if}}
+                                {{if website}}
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">网址：</label>
+                                        <div class="layui-input-block">
+                                            {{website}}
+                                        </div>
+                                    </div>
+                                {{/if}}
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">所属行业：</label>
+                                    <div class="layui-input-block">
+                                        {{each industry as value i}}
+                                            {{value}}
+                                        {{/each}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">机构代码：</label>
+                                    <div class="layui-input-block">
+                                        {{isApproval}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item uploadImage">
+                                    <label class="layui-form-label">企业证件：</label>
+                                    {{each certificates as value i}}
+                                        <div class="layui-input-block">
+                                            <div class="layui-upload-drag" id="imageUpload" >
+                                                <div class="layui-upload-list">
+                                                    <img class="layui-upload-img"  src='{{imagesUrl}}{{value}}' id="Upimg" />  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                                {{if honor.length !== 0}}
+                                    <div class="layui-form-item uploadImage">
+                                        <label class="layui-form-label">荣誉资质：</label>
+                                        {{each honor as value i}}
+                                            <div class="layui-input-block">
+                                                <div class="layui-upload-drag" id="imageUpload" >
+                                                    <div class="layui-upload-list">
+                                                        <img class="layui-upload-img"  src='{{imagesUrl}}{{value}}' id="Upimg" />  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {{/each}}
+                                    </div>
+                                {{/if}}
+                                <div class="layui-form-item uploadImage">
+                                    <label class="layui-form-label">企业logo：</label>
+                                    <div class="layui-input-block">
+                                        <div class="layui-upload-drag" id="imageUpload" >
+                                            <div class="layui-upload-list">
+                                                <img class="layui-upload-img"  src='{{imagesUrl}}{{logo}}' id="Upimg" />  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{if mainService}}
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">主要服务：</label>
+                                        <div class="layui-input-block">
+                                            {{mainService}}
+                                        </div>
+                                    </div>
+                                {{/if}}
+                                {{if introduction}}
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">简介：</label>
+                                        <div class="layui-input-block">
+                                            {{introduction}}
+                                        </div>
+                                    </div>
+                                {{/if}}
+                            {{/if}}
+                        </script>
+                    </div>
+                    <form class="layui-form" action="" id='Form'>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>企业名称</label>
+                            <div class="layui-input-block">
+                                <input name='name' type="text" required  disabled lay-verType='tips' lay-verify="name" placeholder="请输入企业名称" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>联系人</label>
+                            <div class="layui-input-block">
+                                <input name='contact' type="text" required lay-verType='tips' lay-verify="contact" placeholder="请输入联系人" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>联系电话</label>
+                            <div class="layui-input-block">
+                                <input name='contactPhone' type="text" required lay-verType='tips' lay-verify="contactPhone" placeholder="请输入联系电话" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" id="area-picker">
+                            <div class="layui-form-label"><b>*</b>所属地区</div>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <select name="province" class="province-selector" data-value="" lay-filter="province1">
+                                    <option value="">请选择省</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <select name="prcityovince" class="city-selector" data-value="" lay-filter="city1">
+                                    <option value="">请选择市</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <select name="county" class="county-selector" data-value="" lay-filter="county1">
+                                    <option value="">请选择区</option>
+                                </select>
+                            </div>   
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">详细地址</label>
+                            <div class="layui-input-block">
+                                <textarea name='address' required  lay-verType='tips' placeholder="请输入详细地址" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">网址</label>
+                            <div class="layui-input-block">
+                                <input name='website' type="text" required  lay-verType='tips' placeholder="请输入网址" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item ">
+                            <label class="layui-form-label"><b>*</b>所属行业</label>
+                            <div class="layui-input-block radio_full">
+                                <script id="user-cell" type="text/html">
+                                    {{each content as value i}}
+                                        <input type="checkbox" value="{{value.id}}" title="{{value.name}}" lay-skin="primary"/>
+                                    {{/each}}
+                                </script>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>机构代码</label>
+                            <div class="layui-input-block">
+                                <input name='isApproval' type="text" required lay-verType='tips' lay-verify="isApproval" placeholder="请输入组织机构代码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item uploadImage">
+                            <label class="layui-form-label"><b>*</b>企业证件</label>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <img class="layui-upload-img" id="Upimg" />
+                                        <span data-id='0' data-name="load0"><i class='layui-icon'>&#xe640;</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload0" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <img class="layui-upload-img" id="Upimg0" />
+                                        <span data-id='1' data-name="load0"><i class='layui-icon'>&#xe640;</i></span>
+                                    </div>
+                                </div>
+                            </div><div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload1" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <img class="layui-upload-img" id="Upimg1" />
+                                        <span data-id='2' data-name="load0"><i class='layui-icon'>&#xe640;</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item uploadImage">
+                            <label class="layui-form-label">荣誉资质</label>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload2" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <img class="layui-upload-img" id="Upimg2" />
+                                        <span data-id='0' data-name="load1"><i class='layui-icon'>&#xe640;</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload3" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <img class="layui-upload-img" id="Upimg3" />
+                                        <span data-id='1' data-name="load1"><i class='layui-icon'>&#xe640;</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload4" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <img class="layui-upload-img" id="Upimg4" />
+                                        <span data-id='2' data-name="load1"><i class='layui-icon'>&#xe640;</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>企业logo</label>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload5" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <img class="layui-upload-img" id="Upimg5" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">主要服务</label>
+                            <div class="layui-input-block">
+                                <textarea name='mainService' required  lay-verType='tips' placeholder="请输入主要服务" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">简介</label>
+                            <div class="layui-input-block">
+                                <textarea name='introduction' required  lay-verType='tips'  placeholder="请输入简介" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"></label>
+                            <div class="layui-input-block Submitbutton">
+                                <button type="button" class="layui-btn" lay-submit lay-filter="Submit">立即提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="layui-colla-item" id='cloudBus'>
+                <h2 class="layui-colla-title" onclick='itemController(this)'>企业上云</h2>
+                <div class="layui-colla-content contentBox1">
+                    <div class='CloudBox'>
+                        <div data-loader="circle" class='loading hot-loading'></div>
+                        <script id="admin1-cell" type="text/html">
+                            {{if status}}
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">企业性质：</label>
+                                    <div class="layui-input-block">
+                                        {{properties}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">成立时间：</label>
+                                    <div class="layui-input-block">
+                                        {{establishedTime}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">企业规模：</label>
+                                    <div class="layui-input-block">
+                                        {{scale}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">E-mail：</label>
+                                    <div class="layui-input-block">
+                                        {{email}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">工商登记名称：</label>
+                                    <div class="layui-input-block">
+                                        {{businessRegistration}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item uploadImage">
+                                    <label class="layui-form-label">证件扫描件：</label>
+                                    {{each scanningCopy as value i}}
+                                        <div class="layui-input-block">
+                                            <div class="layui-upload-drag" id="imageUpload" >
+                                                <div class="layui-upload-list">
+                                                    <img class="layui-upload-img"  src='{{imagesUrl}}{{value}}' id="Upimg" />  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">法人代表：</label>
+                                    <div class="layui-input-block">
+                                        {{corporate}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item uploadImage">
+                                    <label class="layui-form-label">法人身份证正反面：</label>
+                                    {{each corporateImage as value i}}
+                                        <div class="layui-input-block">
+                                            <div class="layui-upload-drag" id="imageUpload" >
+                                                <div class="layui-upload-list">
+                                                    <img class="layui-upload-img"  src='{{imagesUrl}}{{value}}' id="Upimg" />  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">银行名称：</label>
+                                    <div class="layui-input-block">
+                                        {{bankName}}
+                                    </div>
+                                </div>
+                                {{if bankCity}}
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">银行地址：</label>
+                                        <div class="layui-input-block">
+                                            {{bankCity.split(',')[0]}} &nbsp; {{bankCity.split(',')[1]}} &nbsp; {{bankCity.split(',')[2]}}
+                                        </div>
+                                    </div>
+                                {{/if}}
+                                {{if bankAddress}}
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">详细地址：</label>
+                                        <div class="layui-input-block">
+                                            {{bankAddress}}
+                                        </div>
+                                    </div>
+                                {{/if}}
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">开户银行：</label>
+                                    <div class="layui-input-block">
+                                        {{bank}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">企业对公账号：</label>
+                                    <div class="layui-input-block">
+                                        {{eterpriseAccount}}
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">银行账户联系电话：</label>
+                                    <div class="layui-input-block">
+                                        {{bankContact}}
+                                    </div>
+                                </div>
+                            {{/if}}
+                        </script>
+                    </div>
+                    <form class="layui-form" action="" id='iForm'>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>企业性质</label>
+                            <div class="layui-input-block">
+                                <input name='properties' lay-verify="properties" type="text" required  lay-verType='tips' placeholder="请输入企业性质" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>成立时间</label>
+                            <div class="layui-input-block">
+                                <input name='establishedTime' lay-verify="establishedTime" type="text" required lay-verType='tips'  id="StartTime" placeholder="请选择成立时间" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label"><b>*</b>企业规模</div>
+                            <div class="layui-input-block">
+                                <input name='scale' lay-verify="scale" type="text" required lay-verType='tips' placeholder="请输入企业规模" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>E-mail</label>
+                            <div class="layui-input-block">
+                                <input name='email' lay-verify="email1" type="text" required  lay-verType='tips' placeholder="请输入E-mail" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>工商登记名称</label>
+                            <div class="layui-input-block">
+                                <input name='businessRegistration' lay-verify="businessRegistration" type="text" required  lay-verType='tips' placeholder="请输入工商登记名称" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item uploadImage">
+                            <label class="layui-form-label"><b>*</b>证件扫描件</label>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload6" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <span data-id='0' data-name="load2"><i class='layui-icon'>&#xe640;</i></span>
+                                        <img class="layui-upload-img" id="Upimg6" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload7" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <span data-id='1' data-name="load2"><i class='layui-icon'>&#xe640;</i></span>
+                                        <img class="layui-upload-img" id="Upimg7" />
+                                    </div>
+                                </div>
+                            </div><div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload8" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <span data-id='2' data-name="load2"><i class='layui-icon'>&#xe640;</i></span>
+                                        <img class="layui-upload-img" id="Upimg8" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>法人代表</label>
+                            <div class="layui-input-block">
+                                <input name='corporate' type="text" required lay-verType='tips' lay-verify="corporate" placeholder="请输入法人代表" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item uploadImage">
+                            <label class="layui-form-label"><b>*</b>法人身份证正反面</label>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload9" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <span data-id='0' data-name="load3"><i class='layui-icon'>&#xe640;</i></span>
+                                        <img class="layui-upload-img" id="Upimg9" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-input-block">
+                                <div class="layui-upload-drag" id="imageUpload10" >
+                                    <i class="layui-icon"></i>
+                                    <p>点击上传</p>
+                                    <div class="layui-upload-list">
+                                        <span data-id='1' data-name="load3"><i class='layui-icon'>&#xe640;</i></span>
+                                        <img class="layui-upload-img" id="Upimg10" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>银行名称</label>
+                            <div class="layui-input-block">
+                                <input name='bankName' type="text" required lay-verType='tips' lay-verify="bankName" placeholder="请输入银行名称" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" id="area-picker0">
+                            <div class="layui-form-label"><b>*</b>银行地址</div>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <select name="province0" class="province-selector" data-value="河北省" lay-filter="province0">
+                                    <option value="">请选择省</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <select name="city0" class="city-selector" data-value="唐山市" lay-filter="city0">
+                                    <option value="">请选择市</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <select name="county0" class="county-selector" data-value="" lay-filter="county0">
+                                    <option value="">请选择区</option>
+                                </select>
+                            </div>   
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">详细地址</label>
+                            <div class="layui-input-block">
+                                <textarea name='bankAddress' required  lay-verType='tips' lay-verify="addresss" placeholder="请输入详细地址" class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>开户银行</label>
+                            <div class="layui-input-block">
+                                <input name='bank' type="text" required lay-verType='tips' lay-verify="bank" placeholder="请输入开户银行" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>企业对公账号</label>
+                            <div class="layui-input-block">
+                                <input name='eterpriseAccount' type="text" required lay-verType='tips' lay-verify="eterpriseAccount" placeholder="请输入企业对公账号" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"><b>*</b>银行账户联系电话</label>
+                            <div class="layui-input-block">
+                                <input name='bankContact' type="text" required lay-verType='tips' lay-verify="bankContact" placeholder="请输入银行账户联系电话" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"></label>
+                            <div class="layui-input-block Submitbutton">
+                                <button type="button" class="layui-btn" lay-submit lay-filter="CloudSubmit">立即提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header" onclick="return notYetopen()">企业投资</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

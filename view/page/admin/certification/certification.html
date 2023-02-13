@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/admin/certification/certification.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+    
+    <script type='text/javascript' src='../../../../libs/js/admin/certification/certification.js'></script>
+    <title></title>
+</head>
+<body>
+    <div class='iframe_title'>
+        <h2>
+            <p>
+                <i class='layui-icon'>&#xe68e;</i>
+                <span>当前位置：</span>
+            </p>
+            <a>个人设置</a>
+            <i class='layui-icon'>&#xe602;</i>
+            <a>认证管理</a>
+        </h2>
+    </div>
+    <div class='templet'>
+        <div data-loader="circle" class='loading latest-loading'></div>
+        <script id="user-cell" type="text/html">
+            <div class='ication enterprise'>
+                <img src="../../../../public/images/101.png" />
+                <span>企业信息认证</span>
+                {{if status === '0' && enterpriseApproval === null}}
+                    <p>您尚未实名认证，赶快去认证吧！</p>
+                    <button class="layui-btn" data-id='0' data-name='info' onclick="authentication(this)">立即认证</button>
+                {{else}}
+                    {{if enterpriseApproval === '0'}}
+                        <p>您认证的信息正在审核中，请等候</p>
+                        <button class="layui-btn" data-id='1' data-name='info' onclick="authentication(this)">查看提交资料</button>
+                    {{/if}}
+                    {{if enterpriseApproval === '1'}}
+                        <p>恭喜，您已通过企业信息认证</p>
+                        <button class="layui-btn" data-id='1' data-name='info' onclick="authentication(this)">查看提交资料</button>
+                    {{/if}}
+                    {{if enterpriseApproval === '2'}}
+                        <p style='color: red'>抱歉，您提交的认证信息被驳回，请重新申请认证</p>
+                        <button class="layui-btn" data-id='0' data-name='info' onclick="authentication(this)">立即认证</button>
+                        <button class="layui-btn" data-id='2' data-name='info' onclick="Reject(this)">查看驳回原因</button>
+                    {{/if}}
+                {{/if}}
+            </div>
+            <div class='ication UpperCloud'>
+                <img src="../../../../public/images/102.png" />
+                <span>企业上云认证</span>
+                {{if status === '0' && upcloudApproval === null || status === '1' && upcloudApproval === null }}
+                    <p>您尚未实名认证，赶快去认证吧！</p>
+                    <button class="layui-btn" data-id='0' data-name='Cloud' onclick="authentication(this)">立即认证</button>
+                {{else}}
+                    {{if upcloudApproval === '0'}}
+                        <p>您认证的信息正在审核中，请等候</p>
+                        <button class="layui-btn" data-id='1' data-name='Cloud'  onclick="authentication(this)">查看提交资料</button>
+                    {{/if}}
+                    {{if upcloudApproval === '1'}}
+                        <p>恭喜，您已通过企业上云认证</p>
+                        <button class="layui-btn" data-id='1' data-name='Cloud'  onclick="authentication(this)">查看提交资料</button>
+                    {{/if}}
+                    {{if upcloudApproval === '2'}}
+                        <p style='color: red'>抱歉，您提交的认证信息被驳回，请重新申请认证</p>
+                        <button class="layui-btn" data-id='0' data-name='Cloud' onclick="authentication(this)">立即认证</button>
+                        <button class="layui-btn" data-id='2' data-name='Cloud' onclick="Reject(this)">查看驳回原因</button>
+                    {{/if}}
+                {{/if}}
+            </div>
+        </script>
+    </div>
+</body>
+</html>

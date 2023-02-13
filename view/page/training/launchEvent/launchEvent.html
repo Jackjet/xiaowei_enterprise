@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/training/launchEvent/launchEvent.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+
+    <script type='text/javascript' src='../../../../libs/js/training/launchEvent/launchEvent.js'></script>
+    <title>唐山小微公共服务平台</title>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item">
+                        <a href="../../../index.html">首页</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../policy/policy.html">政策解读</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../enterprise/enterprise.html">企业上云</a>
+                    </li>
+                    <li class="layui-nav-item nav_layui-this">
+                        <a href="../training.html">培训活动</a>
+                        <dl class="layui-nav-child">
+                            <dd><a class='layui-this' href="javascript:;">发布活动</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../beijing/beijing.html">京翼互动</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../application/application.html">企业应用</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../guarantee/guarantee.html">融资担保</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='layui-main' style='margin-bottom: 20px;'>
+        <div class='layui-row current'>
+            <h2>
+                <p>
+                    <i class='layui-icon'>&#xe68e;</i>您的位置：
+                </p>
+                <a href='../training.html'>培训活动</a>
+                <i class='layui-icon'>&#xe602;</i>
+                <a href='javascript:;'>发布活动</a>
+            </h2>
+            <div class='Details'>
+                <form class="layui-form" action="" id='Form'>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>活动名称</label>
+                        <div class="layui-input-block">
+                            <input name='name' type="text" required  lay-verType='tips' lay-verify="name" placeholder="请输入活动名称" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>活动时间</label>
+                        <div class="layui-input-block">
+                            <input name='startTime' type="text" readonly="readonly" required lay-verType='tips' lay-verify="StartTime" class="start-two" id="StartTime" placeholder="请选择开始时间">
+                            <input name='endTime' type="text" readonly="readonly" required lay-verType='tips' lay-verify="EndTime" class="start-two" id="EndTime" placeholder="请选择结束时间">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>联系人</label>
+                        <div class="layui-input-block">
+                            <input name='contacts' type="text" required lay-verType='tips' lay-verify="Contact" placeholder="请输入联系人" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>联系电话</label>
+                        <div class="layui-input-block">
+                            <input name='contactsPhone' type="text" required lay-verType='tips' lay-verify="Phone" placeholder="请输入联系电话" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>主办单位</label>
+                        <div class="layui-input-block">
+                            <input name='host' type="text" required  lay-verType='tips' lay-verify="organizer" placeholder="请输入主办单位" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>承办单位</label>
+                        <div class="layui-input-block">
+                            <input name='undertake' type="text" required  lay-verType='tips' lay-verify="undertake" placeholder="请输入承办单位" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>活动内容</label>
+                        <div class="layui-input-block">
+                            <textarea id="LAY_editor"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>活动主图</label>
+                        <div class="layui-input-block">
+                            <div class="layui-upload-drag" id="imageUpload" >
+                                <i class="layui-icon"></i>
+                                <p>点击上传，或将文件拖拽到此处</p>
+                                <div class="layui-upload-list">
+                                    <img class="layui-upload-img" id="Upimg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">活动附件</label>
+                        <div class="layui-input-block buttonUp">
+                            <button type="button" class="layui-btn" id="fileUp"><i class="layui-icon"></i>上传附件</button>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>选择分类</label>
+                        <div class="layui-input-block">
+                            <select name='firstTypeId' required  lay-verType='tips' lay-verify="mainClass" class='oneClass' lay-filter='filter' id='filter'>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">子分类</label>
+                        <div class="layui-input-block">
+                            <select name='secondTypeId' lay-verType='tips' class='SubClass' lay-filter='secondTypeId' id='second'>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><b>*</b>活动地址</label>
+                        <div class="layui-input-block">
+                            <textarea name='address' required  lay-verType='tips' lay-verify="address" placeholder="请输入活动地址" class="layui-textarea" id='address'></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"></label>
+                        <div class="layui-input-block Submitbutton">
+                            <button type="button" class="layui-btn" lay-submit lay-filter="Submit" id='Submit'>立即提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

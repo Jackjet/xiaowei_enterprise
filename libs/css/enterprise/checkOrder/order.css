@@ -1,0 +1,240 @@
+body {
+    background-color: #f6f7fb;
+}
+
+
+.current {
+    margin: 0px 20px;
+    padding: 20px 0px;
+}
+
+.current h2 {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+    cursor: pointer;
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.cloud_main {
+    background: white;
+    height: 800px;
+}
+
+.layui-form {
+    margin: 0 auto;
+}
+
+.carousel_page {
+    border:1px solid #e6e6e6;
+    margin:50px 20px 20px 20px;
+}
+
+.ul_list {
+    display: inline-block;
+}
+
+.carousel_page h2 {
+    background: #f5f5f5;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left: 20px;
+    color: #858585;
+}
+
+footer{
+    margin-top: 20px;
+}
+
+.carousel_name {
+    margin:20px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.carousel_invoice {
+    margin:20px 0px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.carousel_PAY {
+    color: #555555;
+}
+
+.carousel_invoice span {
+    display: inline-block;
+    padding: 4px 30px;
+    border:1px solid #d8d8d8;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #555555;
+    font-size: 12px;
+    margin-top: 7px;
+    vertical-align: middle;
+}
+
+.layui-form-label {
+    width: 100px !important;
+    padding: 9px 0px;
+}
+
+.layui-input, .layui-textarea {
+    width: 30%;
+}
+
+.layui-input-block span {
+    height: 100%;
+}
+
+.carousel_PAY span{
+    display: inline-block;
+    width: 150px;
+    border:1px solid #d8d8d8;
+    margin-right: 10px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.carousel_PAY span p {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 42px;
+    margin-left: 10px;
+}
+
+.carousel_PAY span i {
+    display: inline-block;
+    font-size: 24px;
+    margin-left: 20px;
+
+}
+
+.carousel_PAY span:nth-child(1) i{
+    color: #09bb07;
+}
+
+.carousel_PAY span:nth-child(2) i{
+    color: #1296db;
+}
+
+.carousel_page .button {
+    margin: 10px 0px 20px 110px;
+    background: #de141d;
+    box-shadow: 1px 3px 10px #e6dbdb;
+}
+
+.carousel_page .cancel {
+    margin: 10px 0px 20px 20px;
+    background: rgb(248, 248, 248);
+    border:1px solid rgb(230, 230, 230);
+    color: #969696;
+    box-shadow: 1px 3px 10px #f3f3f3;
+}
+
+.carousel_name {
+    margin:10px 0px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.carousel_name span {
+    display: inline-block;
+    padding: 4px 0px;
+    margin-right: 10px;
+    color: #555555;
+    font-size: 14px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+.carousel_Price {
+    margin:10px 0px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.carousel_Price span {
+    display: inline-block;
+    padding: 4px 0px;
+    margin-right: 10px;
+    color: #de141d;
+    font-size: 14px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+.border {
+    border:1px solid #de141d !important;
+}
+
+.PayType {
+    font-size: 14px;
+    color: #666; 
+    margin-top: 20px;
+}
+
+.PayType .WEIXIN{
+    color: #555555;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.PayType .WEIXIN i {
+    display: inline-block;
+    font-size: 30px;
+    color: #09bb07;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.PayType .ZHIFUBAO{
+    color: #555555;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.PayType .ZHIFUBAO i {
+    display: inline-block;
+    font-size: 30px;
+    color: #1296db;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.mixins {
+    color: #de141d !important;
+}
+
+.carousel_name .layui-form-item {
+    margin-bottom: 0px !important;
+}
+
+.carousel_Price .layui-form-item {
+    margin-bottom: 0px !important;
+}

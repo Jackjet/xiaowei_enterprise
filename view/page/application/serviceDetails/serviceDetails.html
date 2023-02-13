@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/application/serviceDetails/serviceDetails.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+
+    <script type='text/javascript' src='../../../../libs/js/application/serviceDetails/serviceDetails.js'></script>
+    <title>唐山小微公共服务平台</title>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item">
+                        <a href="../../../index.html">首页</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../policy/policy.html?level=U2Vjb25kbGV2ZWw=">政策解读</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../enterprise/enterprise.html?level=U2Vjb25kbGV2ZWw=">企业上云</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../training/training.html">培训活动</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../beijing/beijing.html">京翼互动</a>
+                    </li>
+                    <li class="layui-nav-item nav_layui-this">
+                        <a href="../application.html">企业应用</a>
+                        <dl class="layui-nav-child">
+                            <dd><a onclick="publicService()">发布服务</a></dd>
+                            <dd><a onclick="publicDemand()">发布需求</a></dd>
+                            <dd><a href="../seek/seek.html?did=QY">找企业</a></dd>
+                            <dd><a href="../seek/seek.html?did=FW">找服务</a></dd>
+                            <dd><a href="../seek/seek.html?did=YQ">找园区</a></dd>
+                            <dd><a href="../../policy/policy.html?level=U2Vjb25kbGV2ZWw=">找政策</a></dd>
+                            <dd><a href="../seek/seek.html?did=XQ">找需求</a></dd>
+                            <dd><a href="../seek/seek.html?did=ZJ">找专家</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a onclick='return notOpen()' href='' target="view_window" >融资担保</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='layui-row classProcess'>
+        <div class='layui-main'>
+            <div class='layui-row current'>
+                <h2>
+                    <p>
+                        <i class='layui-icon'>&#xe68e;</i>您的位置：
+                    </p>
+                    <a href='../application.html'>企业应用</a>
+                    <i class='layui-icon'>&#xe602;</i>
+                    <a href='../servicehall/servicehall.html'>服务大厅</a>
+                    <i class='layui-icon'>&#xe602;</i>
+                    <a href='javascript:;'>服务详情</a>
+                </h2>
+            </div>
+           <div class='DetailsMain'>
+                <div class='BuyService'>
+                    <div data-loader="circle" class='loading main-loading'></div>
+                    <script id="USER-cell" type="text/html">
+                        <div class='imgLogo'>
+                            <img src="{{logo}}" />
+                            {{if servicesNum}}
+                                <span>服务次数：{{servicesNum}}次</span>
+                            {{else}}
+                                <span>服务次数：0次</span>
+                            {{/if}}
+                        </div>
+                        <div class='UserContent'>
+                            <span class='name'>{{name}}</span>
+                            <div class='charge'>价格：<span>￥<b>{{charge}}</b>元</span></div>
+                            <div class='userName'>服务企业：{{userName}}</div>
+                            <div class='serviceObject'>服务方式：{{serviceObject}}</div>
+                            <div class='serviceMode layui-elip'>服务对象：{{serviceMode}}</div>    
+                            <div class='firstTypeName'>服务类别：{{firstTypeName}}</div>
+                            <div class='buyButton'>
+                                <button class="layui-btn" onclick='BuyClickPayment()'>立即购买</button>
+                                <button class="layui-btn" onclick='return notOpen()'><i class='layui-icon'>&#xe600;</i>收 藏</button>
+                            </div>
+                        </div>
+                        <div class='briefinfo'>
+                            <h2>联系我们</h2>
+                            <span><i class='iconfont TanSanwode'></i>联系人</span>
+                            <p class='layui-elip'>
+                                {{ if IfLogin == ''}}
+                                    {{contacts.substr(0, 1) + "**"}}
+                                {{else}}
+                                    {{contacts}}
+                                {{/if}}
+                            </p>
+                            <span><i class='iconfont TanSandianhua4'></i>联系电话</span>
+                            <p class='layui-elip'>
+                                {{ if IfLogin == ''}}
+                                    {{contactsPhone.substr(0, 3) + "****" + contactsPhone.substr(7)}}
+                                {{else}}
+                                    {{contactsPhone}}
+                                {{/if}}
+                            </p>
+                            <span><i class='iconfont TanSanxinxi'></i>邮箱</span>
+                            <p class='layui-elip'>
+                                {{ if IfLogin == ''}}
+                                    {{email.substr(0, 3) + "****" + email.substr(7)}}
+                                {{else}}
+                                    {{email}}
+                                {{/if}}
+                            </p>
+                        </div>
+                    </script>
+                </div>
+                <div class='information'>
+                    <div class='infoleft'>
+                        <h2>机构信息</h2>
+                        <div class='detailed'>
+                            <div data-loader="circle" class='loading main-loading'>
+                                <script id="info-cell" type="text/html">
+                                    <div class="align">企业名称：{{name}}</div>
+                                    <div class='align'>企业性质：{{properties}}</div>
+                                    <div class='align'>所属行业：{{industry}}</div>
+                                    <div class='align'>所在地址：{{area}}</div>
+                                    <div class='align'>公司网址：{{website}}</div>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='inofright'>
+                        <div class="layui-tab layui-tab-card" lay-filter="docDemoTabBrief">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">服务详情</li>
+                                <li>服务记录</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show one">
+                                    <div data-loader="circle" class='loading main-loading'></div>
+                                    <script id="service-cell" type="text/html">
+                                        <div class='list'>
+                                            企业姓名：{{userName}}
+                                        </div>
+                                        <div class='list'>
+                                            服务名称：{{name}}
+                                        </div>
+                                        <div class='list'>
+                                            收费标准：{{charge}}
+                                        </div>
+                                        <div class='list'>
+                                            服务类别：{{firstTypeName}}
+                                        </div>
+                                        <div class='list'>
+                                            发布日期：{{createTime}}
+                                        </div>
+                                        {{if servicesNum}}
+                                            <div class='list'>
+                                                服务次数：{{servicesNum}}次
+                                            </div>
+                                            {{else}}
+                                            <div class='list'>
+                                                服务次数：0次
+                                            </div>
+                                        {{/if}}
+                                        <div class='ServiceIntr'>
+                                            <h2>服务介绍</h2>
+                                            <div class='content'></div>
+                                        </div>
+                                    </script>
+                                </div>
+                                <div class="layui-tab-item two">
+                                    <div class='tab_item'>
+                                        <div data-loader="circle" class='loading main-loading'></div>
+                                        <script id="service1-cell" type="text/html">
+                                            {{each content as value i}}
+                                                <div>
+                                                    <span>服务对象：{{value.userName}}</span>
+                                                    <p>服务时间：{{value.createTime}}</p>
+                                                </div>
+                                            {{/each}}
+                                        </script>
+                                    </div>
+                                    <div id='laypage'></div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/training/trainingDetails/trainingDetails.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+
+    <script type='text/javascript' src='../../../../libs/js/training/trainingDetails/trainingDetails.js'></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.14&key=40441ee3620db2daaf276a67f18e37ec"></script> 
+    <title>唐山小微公共服务平台</title>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item">
+                        <a href="../../../index.html">首页</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../policy/policy.html">政策解读</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../enterprise/enterprise.html">企业上云</a>
+                    </li>
+                    <li class="layui-nav-item nav_layui-this">
+                        <a href="../training.html">培训活动</a>
+                        <dl class="layui-nav-child">
+                            <dd><a onclick="publicTrain()">发布活动</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../beijing/beijing.html">京翼互动</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../application/application.html">企业应用</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="../../guarantee/guarantee.html">融资担保</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='layui-main' style='margin-bottom: 20px;'>
+        <div class='layui-row current'>
+            <h2>
+                <p>
+                    <i class='layui-icon'>&#xe68e;</i>您的位置：
+                </p>
+                <a href='../training.html'>培训活动</a>
+                <i class='layui-icon'>&#xe602;</i>
+                <a href='javascript:;'>活动详情</a>
+            </h2>
+            <div class='Details'>
+                <div data-loader="circle" class='loading Details-loading'></div>
+                <script id="Details-cell" type="text/html">
+                    <div class='title layui-elip'>{{name}}</div>
+                    <div class='time'>发布时间：{{createTime}}</div>
+                    <div class='main'>
+                        <div class='image'>
+                            <img src="{{image}}" />
+                        </div>
+                        <div class='right'>
+                            <ul>
+                                <li>活动分类：{{firstTypeName}}<i class='layui-icon'>&#xe602;</i>{{secondTypeName}}</li>
+                                <li>主办单位：{{host}}</li>
+                                <li>承办单位：{{undertake}}</li>
+                                <li>活动时间：{{startTime}} - {{endTime}}</li>
+                                <li>联系人：
+                                    {{ if IfLogin == ''}}
+                                        {{contacts.substr(0, 1) + "**"}}
+                                    {{else}}
+                                        {{contacts}}
+                                    {{/if}}
+                                </li>
+                                <li>联系电话：
+                                    {{ if IfLogin == ''}}
+                                        {{contactsPhone.substr(0, 3) + "****" + contactsPhone.substr(7)}}
+                                    {{else}}
+                                        {{contactsPhone}}
+                                    {{/if}}
+                                </li>
+                                <li>活动地址：{{address}}</li>
+                                {{if status != '1'&&status != '2'}}
+                                <li>
+                                    <span onclick='IWANTTOSIGNUP()'>我要报名</span>
+                                </li>
+                                {{/if}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="Title">
+                        <span>活动内容</span>
+                    </div>
+                    <div class='Richtext'></div>
+                    <div id="container"></div>
+                    <div class='attaChment'>
+                        <h2><i class='iconfont TanSanfujian2'></i><span>下载附件</span></h2>
+                        <div class='attrContent'>
+                            <span class='title'>普通附件</span>
+                            {{if file.split('.')[1] === 'jpg' ||  file.split('.')[1] === 'png' || file.split('.')[1] === 'jpeg' || file.split('.')[1] === 'gif'}}
+                                <div class='typeImage'>
+                                    <img src='../../../../public/images/{{Suffix}}' />
+                                    <span>{{file}}</span>
+                                    <p><a href='{{Upfile}}' target='_blank'>预览</a></p>
+                                    <p style='float:left'><a id='upload' data-loadname='{{file}}' data-load='{{Upfile}}'>下载</a></p>
+                                </div>
+                                {{else}}
+                                <div class='typeImage'>
+                                    <img src='../../../../public/images/{{Suffix}}' />
+                                    <span>{{file}}</span>
+                                    <p class='UploadLeft'><a id='upload' data-loadname='{{file}}' data-load='{{Upfile}}'>下载</a></p>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </script>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="http://danml.com/js/download2.js"></script>
+</body>
+</html>

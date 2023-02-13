@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/admin/myorder/order.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+    
+    <script type='text/javascript' src='../../../../libs/js/admin/myorder/order.js'></script>
+    <title></title>
+</head>
+<body>
+    <div class='iframe_title'>
+        <h2>
+            <p>
+                <i class='layui-icon'>&#xe68e;</i>
+                <span>当前位置：</span>
+            </p>
+            <a>订单中心</a>
+            <i class='layui-icon'>&#xe602;</i>
+            <a>我的订单</a>
+        </h2>
+    </div>
+    <div class='templet'>
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title table_body">
+                <li class="layui-this">全部</li>
+                <li data-id='0'>待付款</li>
+                <li data-id='1'>已完成</li>
+                <li data-id='2'>已取消</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class='table_header'>
+                    <div class="layui-col-xs8 left">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <select id="brickType"  lay-filter="brickType">
+                                        <option value="0">近三个月订单</option>
+                                        <option value="1">近半年的订单</option>
+                                        <option value="2">近一年的订单</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="layui-col-xs2 center">
+                        金额
+                    </div>
+                    <div class="layui-col-xs2 right">
+                        订单详情
+                    </div>
+                </div>
+                <ul class='order'>
+                    <div data-loader="circle" class='loading hot-loading'></div>
+                    <script id="user-cell" type="text/html">
+                        {{each content as value i}}
+                            <li>
+                                <h2>{{value.orderTime}} &nbsp;&nbsp; 订单号：{{value.id}}</h2>
+                                <div>
+                                    <a href='javascript:;'>
+                                        <img src='{{value.prodLogo}}'/>
+                                        <span>{{value.prodName}}</span>
+                                    </a>
+                                    <div class='operation'>
+                                        {{if value.status === '0'}}
+                                            <span class='payment' data-payType="{{value.payType}}" data-id='{{value.type}}' data-name={{value.relateId}} data-did='{{value.id}}' data-pay="{{value.money}}">待付款</span>
+                                        {{/if}}
+                                        {{if value.status === '1'}}
+                                            <span>已完成</span>
+                                        {{/if}}
+                                        {{if value.status === '2'}}
+                                            <span class='cancel'>已取消</span>
+                                        {{/if}}
+                                        <a href="javascript:;" data-payType="{{value.payType}}" data-id='{{value.id}}' onclick="orderDetails(this)">订单详情</a>
+                                    </div>
+                                    <div class='amount'>
+                                        <div>金额：<span>{{value.money}}元</span></div>
+                                        {{if value.payType === '0'}}
+                                            <p>微信支付</p>
+                                        {{else}}
+                                            <p>支付宝支付</p>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </li>
+                        {{/each}}
+                        {{if content.length === 0}}
+                            <div class="nodata">
+                                <i class="iconfont TanSantishi"></i>暂无数据 ！
+                            </div>
+                        {{/if}}
+                    </script>
+                </ul>
+                <div id='laypage'></div>
+            </div>
+        </div>  
+    </div>
+</body>
+</html>

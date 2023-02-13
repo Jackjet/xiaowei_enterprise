@@ -1,0 +1,100 @@
+body {
+    background-color: #f6f7fb;
+}
+
+#banner {
+    width: 100%;
+    height: 300px !important;
+    min-width: 1200px;
+}
+
+#banner img {
+    height: 100%;
+    width: 100%;
+}
+
+.cloud_main {
+    background: white;
+    margin-bottom: 20px;
+}
+
+.current {
+    margin: 0px 20px;
+    padding: 20px 0px;
+}
+
+.current h2 {
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.ul_list {
+    margin:0px 20px;
+    padding-bottom: 20px;
+}
+
+.ul_list ul {
+    position: relative;
+    min-height: 100px;
+    height: 100%;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+#laypage {
+    text-align: right;
+}
+
+.ul_list ul li {
+    width: 180px;
+    display: inline-block;
+    margin: 0px 49px 20px 0px;
+}
+
+.ul_list ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.ul_list ul li a img {
+    width: 100%;
+    height: 100px;
+    border:1px solid #e7e7e7;
+}
+
+.ul_list ul li a p {
+    text-align: center;
+    margin-top: 5px;
+    color: #979797;
+}

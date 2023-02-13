@@ -1,0 +1,90 @@
+.footer_bg {
+    background: #3b3e4e;
+}
+
+.footer_bg .layui-title {
+    color: white;
+    font-size: 18px;
+    padding-top: 40px;
+}
+
+.footer_bg .layui-title span {
+    border-top:1px solid #64656d;
+    display: block;
+    width: 70%;
+    margin-top: 10px;
+    position: relative;
+}
+
+
+.footer_bg .layui-title span::after {
+    content:"";
+    border-top:1px solid rgb(190, 190, 190);
+    width: 30px;
+    display: inline-block;
+    top: -1px;
+    position: absolute;
+}
+
+.footer_list {
+    padding-top: 10px;
+    text-align: left;
+    color: #e6e6e6;
+}
+
+.footer_list a{
+    color: #e6e6e6;
+}
+
+.footer_list  i {
+    font-size: 30px;
+}
+
+.organizer {
+    border-top:1px solid #64656d;
+    background: #3b3e4e;
+}
+
+.org_item {
+    padding: 20px 0;
+    color: #e6e6e6;
+}
+
+.org_item a {
+    color: #8098d1;
+}
+
+.org_item a:hover {
+    text-decoration:underline;
+}
+
+.footer_bottom {
+    background: #242735;
+    height: 50px;
+}
+
+.footer_text {
+    color: white;
+    text-align: left;
+    line-height: 50px;
+}
+
+.footer_text1 {
+    color: white;
+    text-align: right;
+    line-height: 50px;
+    background: #242735;
+}
+
+.footer_bottom .layui-main {
+    background: #242735;
+}
+
+.footer_bg > .layui-main {
+    background: #3b3e4e;
+    height: 241px;
+}
+
+.link {
+    margin-top: 40px;
+}

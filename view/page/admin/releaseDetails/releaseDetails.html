@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/admin/releaseDetails/releaseDetails.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+    
+    <script type='text/javascript' src='../../../../libs/js/admin/releaseDetails/releaseDetails.js'></script>
+    <title></title>
+</head>
+<body>
+    <div class='iframe_title'>
+        <h2>
+            <p>
+                <i class='layui-icon'>&#xe68e;</i>
+                <span>当前位置：</span>
+            </p>
+            <a onclick="PreviousPage();">我的需求</a>
+            <i class='layui-icon'>&#xe602;</i>
+            <a class='title' onclick="PreviousPage();"></a>
+            <i class='layui-icon'>&#xe602;</i>
+            <a>需求详情</a>
+        </h2>
+    </div>
+    <div class='layui-row current'>
+        <div class='Details'>
+            <div data-loader="circle" class='loading Details-loading'></div>
+            <script id="Details-cell" type="text/html">
+                <div class='main'>
+                    <div class='image'>
+                        <img src="{{logo}}" />
+                    </div>
+                    <div class='right'>
+                        <ul>
+                            <li>{{userName}}</li>
+                            <li>需求名称：{{name}}</li>
+                            <li>联系人：
+                                {{ if IfLogin == ''}}
+                                    {{contacts.substr(0, 1) + "**"}}
+                                {{else}}
+                                    {{contacts}}
+                                {{/if}}
+                            </li>
+
+                            <li>联系电话：
+                                {{ if IfLogin == ''}}
+                                    {{contactsPhone.substr(0, 3) + "****" + contactsPhone.substr(7)}}
+                                {{else}}
+                                    {{contactsPhone}}
+                                {{/if}}
+                            </li>
+                            <li>需求分类：{{firstTypeName}}<i class='layui-icon'>&#xe602;</i>{{secondTypeName}}</li>
+                            <li>所在地：{{address}}</li>
+                            <li>发布日期：{{createTime}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="Title">
+                    <span>具体需求</span>
+                </div>
+                <div class='Richtext'></div>
+                <div id="container"></div>
+            </script>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

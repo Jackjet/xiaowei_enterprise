@@ -1,0 +1,308 @@
+body {
+    background-color: #f6f7fb;
+}
+
+.banner {
+    min-width: 1200px;
+    height: 350px;
+    background: url(../../../../public/images/buybanner.png) no-repeat;
+}
+
+.serviceLogo {
+    width: 180px;
+    height: 300px;
+    float: left;
+}
+
+.serviceLogo img {
+    width:100%;
+    height: 90px;
+    margin-top: 20px;
+}
+
+.serviceBuy {
+    float: left;
+    height: 300px;
+    width: 55%;
+    padding-left: 30px;
+}
+
+.serviceBuy > span {
+    color: white;
+    font-size: 24px;
+    display: block;
+    margin-top:20px;
+}
+
+.serviceBuy > p {
+    color: white;
+    min-height:30px;
+    max-height: 50px;
+    display: inline-block;
+    width: 100%;
+    margin:10px 0px; 
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.spec {
+    color: white;
+    height: 50px;
+}
+
+.spec span {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+
+.spec ul li {
+    float: left;
+    border:1px solid white;
+    padding: 0px 15px;
+    min-width: 40px;
+    text-align: center;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    border-right: none;
+    cursor: pointer;
+}
+
+.spec ul li:nth-last-child(1) {
+    border:1px solid white;
+}
+
+.spec span dd {
+    width: 200px;
+    display: inline-block;
+    font-size: 18px;
+    color: #f98d00;
+    vertical-align: top;
+    position: absolute;
+    font-weight: 500;
+    top: 1px;
+    padding-right: 5px;
+}
+
+.spec span a {
+    color: white;    
+}
+
+.submit span {
+    width: 120px;
+    text-align: center;
+    height:35px;
+    line-height: 35px;
+    margin-right: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit span:nth-child(1){
+    background: #ec6941;
+    border:1px solid  #ec6941;
+}
+
+.submit span:nth-child(2) {
+    border:1px solid white;
+}
+
+.submit span i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.submit span p {
+    display: inline-block;
+    height: 35px;
+    line-height: 37px;
+    vertical-align: top;
+}
+
+.contact {
+    float: right;
+    width: 300px;
+    height: 350px;
+}
+
+.contact_item {
+    width: 250px;
+    background: white;
+    height:250px;
+    float: right;
+    margin-top: 50px;
+    position: relative;
+}
+
+.contact_item h2 {
+    padding:10px 20px;
+    font-size: 16px;
+    color: white;
+    background: #308bf3;
+}
+
+.contact_item ul li {
+    height: 68px;
+    padding: 0px 20px;
+    position: relative;
+}
+
+.contact_item ul li span {
+    display: inline-block;
+    top: 10px;
+    left: 50px;
+    font-size: 14px;
+    position: absolute;
+    color: rgb(122, 122, 122);
+}
+
+.contact_item ul li i {
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    margin-right: 10px;
+    color: rgb(163, 163, 163);
+}
+
+.contact_item ul li p {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    color: rgb(163, 163, 163);
+}
+
+.active-buy-detail {
+    min-height: 200px;
+    margin: 20px;
+}
+
+.current {
+    margin: 0px 20px;
+    padding: 20px 0px;
+}
+
+.current h2 {
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.webHtml {
+    padding: 20px 20px;
+    position: relative;
+}
+
+.webHtml div {
+    width: 100% !important;
+}
+
+.webHtml div div {
+    margin:0 !important;
+}
+
+.webHtml div div span {
+    width: 100% !important;
+}
+
+.webHtml img {
+    width: 100%;
+}
+
+.CallBack {
+    position: relative;
+    height: 100%;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.BuySpec li {
+    position: relative;
+}
+
+.BuySpec li span {
+    display: inline-block;
+    width: 100%;
+}
+
+.BuySpec li div {
+    position:absolute;
+    right: 0px;
+    top:0px;
+    width: 20px;
+    height: 15px;
+    background: white;
+    border-radius: 0px 0px 0px 100px;
+    display: none;
+}
+
+.BuySpec li div i {
+    display: inline-block;
+    color: rgb(158, 158, 158);
+    vertical-align: top;
+    height: 10px;
+    width: 10px;
+    margin-left: 5px;
+    line-height: 12px;
+    font-size: 12px;
+}
+
+.BuyCycle li {
+    position: relative;
+}
+
+.BuyCycle li div {
+    position:absolute;
+    right: 0px;
+    top:0px;
+    width: 20px;
+    height: 15px;
+    background: white;
+    border-radius: 0px 0px 0px 100px;
+    display: none;
+}
+
+.BuyCycle li div i {
+    display: inline-block;
+    color: rgb(158, 158, 158);
+    vertical-align: top;
+    height: 10px;
+    width: 10px;
+    margin-left: 5px;
+    line-height: 12px;
+    font-size: 12px;
+}

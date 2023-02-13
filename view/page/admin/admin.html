@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/admin/admin.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="../../../public/common/js/frameWork.js"></script>
+    <script type='text/javascript' src='../../../libs/js/admin/admin.js'></script>
+    <title>唐山小微公共服务平台</title>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item layui-selete">我的工作台</li>
+                    <li class="layui-nav-item layui-this">
+                        <a href="javascript:void(0)" data-id='1-1' data-url='certification/certification.html'>个人设置</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:void(0)" data-id='2-1' data-url='releasedemand/releasedemand.html'>我的需求</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:void(0)" data-id='3-1' data-url='launchEvent/launchEvent.html'>我的活动</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:void(0)" data-id='4-1' data-url='pubService/service.html'>我的服务</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:void(0)" data-id='5-1' data-url='buyService/service.html'>云服务商</a>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:void(0)" data-id='6-1' data-url='myorder/order.html'>订单中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='layui-main'>
+        <div class='layui-row'>
+            <div class='layui-col-xs2'>
+                <div class='nav_admin'>
+                    <div class='adminlogo'>
+                        <div data-loader="circle" class='loading hot-loading'></div>
+                        <script id="user-cell" type="text/html">
+                            {{if logo === 'null' || logo === null || logo === undefined}}
+                                <img src='../../../public/images/admin.png' />
+                            {{else}}
+                                <img src='{{imagesUrl}}{{logo}}' /> 
+                            {{/if}}
+                            <p class='layui-elip'>{{name}}</p>
+                        </script>
+                    </div>
+                    <div class='tree'>
+                        <ul>
+                            <div class='tree-title'>
+                                <img src='../../../public/images/001.png' />
+                                <span>个人设置</span>
+                            </div>
+                            <li class='Color' data-id='1-1'>
+                                <a href='javascript:void(0)' data-url='certification/certification.html'>认证管理</a>
+                            </li>
+                            <li data-id='1-2'>
+                                <a href='javascript:void(0)' data-url='password/password.html'>修改密码</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <div class='tree-title'>
+                                <img src='../../../public/images/002.png' />
+                                <span>我的需求</span>
+                            </div>
+                            <li data-id='2-1'>
+                                <a href='javascript:void(0)' data-url='releasedemand/releasedemand.html'>我发布的需求</a>
+                            </li>
+                            <li data-id='2-2'>
+                                <a href='javascript:void(0)' data-url='demand/demand.html'>我参与的需求</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <div class='tree-title'>
+                                <img src='../../../public/images/003.png' />
+                                <span>我的活动</span>
+                            </div>
+                            <li data-id='3-1'>
+                                <a href='javascript:void(0)' data-url='launchEvent/launchEvent.html'>我发布的活动</a>
+                            </li>
+                            <li data-id='3-2'>
+                                <a href='javascript:void(0)' data-url='activities/activities.html'>我参与的活动</a>
+                            </li>
+                        </ul>   
+                        <ul>
+                            <div class='tree-title'>
+                                <img src='../../../public/images/004.png' />
+                                <span>我的服务</span>
+                            </div>
+                            <li data-id='4-1'>
+                                <a href='javascript:void(0)' data-url='pubService/service.html?level'>我发布的服务</a>
+                            </li>
+                            <li data-id='4-2'>
+                                <a href='javascript:void(0)' data-url='myService/service.html?level'>我购买的服务</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <div class='tree-title'>
+                                <img src='../../../public/images/005.png' />    
+                                <span>云服务商</span>
+                            </div>
+                            <li data-id='5-1'>
+                                <a href='javascript:void(0)' data-url='buyService/service.html?level'>我购买的服务</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <div class='tree-title'>
+                                <img src='../../../public/images/006.png' />
+                                <span>订单中心</span>
+                            </div>
+                            <li data-id='6-1'>
+                                <a href='javascript:void(0)' data-url='myorder/order.html?level'>我的订单</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <div class='tree-title'>
+                                <img src='../../../public/images/007.png' />
+                                <span onclick='notOpen()'>我的融资</span>
+                            </div>
+                        </ul>
+                        <ul>
+                            <div class='tree-title'>
+                                <img src='../../../public/images/008.png' />
+                                <span onclick='notOpen()'>政企互动</span>
+                            </div>
+                        </ul>
+                        <ul style='margin-bottom: 5px;'>
+                            <div class='tree-title'>
+                                <img src='../../../public/images/009.png' />
+                                <span onclick='notOpen()'>我的收藏</span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class='layui-col-xs10'>
+                <div class='nav_main' id='nav_main'>
+                    <iframe id="iframe" scrolling="no" runat="server" frameborder="0" scrolling="auto" src='certification/certification.html'></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

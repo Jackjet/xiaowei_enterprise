@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/admin/releasedemand/releasedemand.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+    
+    <script type='text/javascript' src='../../../../libs/js/admin/releasedemand/releasedemand.js'></script>
+    <title></title>
+</head>
+<body>
+    <div class='iframe_title'>
+        <h2>
+            <p>
+                <i class='layui-icon'>&#xe68e;</i>
+                <span>当前位置：</span>
+            </p>
+            <a>我的需求</a>
+            <i class='layui-icon'>&#xe602;</i>
+            <a>我发布的需求</a>
+            <input name='undertake' type="text" required  lay-verType='tips' lay-verify="undertake" placeholder="请输入关键字" autocomplete="off" id='layuisearch' class="layui-input" />
+            <i class="layui-icon search">&#xe615;</i>
+        </h2>
+    </div>
+    <div class='templet'>
+        <ul>
+            <div data-loader="circle" class='loading hot-loading'></div>
+            <script id="user-cell" type="text/html">
+                {{each content as value i}}
+                <li>
+                    <img src='{{value.logo}}' />
+                    <div class='list_detils'>
+                        <p class='layui-elip'>
+                            <span class='left_name'>需求名称：{{ value.name }}</span>
+                        </p>
+                        <p>
+                            <span class='left_name'>联系人：                                
+                            </span><span class='layui-elip'>{{ value.contacts }}</span>
+                        </p>
+                        <p>
+                            <span class='left_name'>联系电话：
+                            </span><span class='layui-elip'>{{ value.contactsPhone }}</span>
+                        </p>
+                        <p>
+                            <span class='left_name'>需求分类：</span>
+                            {{if value.secondTypeName}}
+                                <span class='layui-elip'>{{ value.firstTypeName }}&nbsp;/&nbsp;{{ value.secondTypeName }}</span>
+                                {{else}}
+                                <span class='layui-elip'>{{ value.firstTypeName }}</span>
+                            {{/if}}
+                        </p>
+                    </div>
+                    <div class='list_detils'>
+                        <p>
+                            <span class='left_name layui-elip'>所在地：{{ value.address }}</span>
+                        </p>
+                        <p>
+                            <span class='left_name layui-elip'>发布日期：{{ value.createTime }}</span>
+                        </p>
+                        <p>
+                            <span class='left_name'>需求状态：
+                            {{if value.status === '0'}}
+                            <span span class='layui-elip'>待审核</span>
+                            {{/if}}
+                            {{if value.status === '2'}}
+                            <span span class='layui-elip'>已驳回</span>
+                            {{/if}}
+                            {{if value.status === '1'}}
+                            <span span class='layui-elip'>已通过</span>
+                            {{/if}}</span>
+                        </p>
+                    </div>
+                    <div class='bottom'>
+                        <a href="../releaseDetails/releaseDetails.html?id={{value.id}}&type=0">
+                            <div class="item">详情</div>
+                        </a>
+                        {{if value.status === '1'}}
+                        <a href="../companyDetails/companyDetails.html?id={{value.id}}&index=0">
+                            <div class="item">参与企业</div>
+                        </a>
+                        <a href="../companyDetails1/companyDetails.html?id={{value.id}}&index=1">
+                            <div class="item">中标企业</div>
+                        </a>
+                        {{/if}}
+                        {{if value.status === '2'}}
+                        <a onclick='Checkrejection(this)' data-id='{{value.id}}' style='cursor: pointer;'>
+                            <div class="item">查看驳回原因</div>
+                        </a>
+                        <a onclick='reedit(this)' data-id='{{value.id}}' style='cursor: pointer;'>
+                            <div class="item">重新编辑</div>
+                        </a>
+                        {{/if}}
+                    </div>
+                </li>
+                {{/each}}
+                {{if content.length === 0}}
+                <div class="nodata">
+                    <i class="iconfont TanSantishi"></i>暂无数据 ！
+                </div>
+                {{/if}}
+            </script>
+        </ul>
+        <div id='laypage'></div>
+    </div>
+</body>
+</html>

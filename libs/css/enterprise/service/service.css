@@ -1,0 +1,157 @@
+body {
+    background-color: #f6f7fb;
+}
+
+#banner {
+    width: 100%;
+    height: 300px !important;
+    min-width: 1200px;
+}
+
+#banner img {
+    height: 100%;
+    width: 100%;
+}
+
+.cloud_main {
+    background: white;
+    margin-bottom: 20px;
+}
+
+.current {
+    margin: 0px 20px;
+    padding: 20px 0px;
+}
+
+.current h2 {
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.ul_list {
+    margin:0px 20px;
+    padding-bottom: 20px;
+}
+
+.ul_list ul {
+    position: relative;
+    height: 100%;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+#laypage {
+    text-align: right;
+}
+
+.recomService li {
+    height: 30px;
+    line-height: 30px;
+    margin-right: 20px;
+}
+
+.ul_list ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.ul_list ul li a img {
+    width: 100%;
+    border:1px solid #e7e7e7;
+}
+
+.ul_list ul li a p {
+    text-align: center;
+    margin-top: 5px;
+    color: #979797;
+}
+
+.layui-tab-content {
+    border-top:none;
+    padding: 20px 0px 0px 0px !important;
+}
+
+.layui-tab-title .layui-this {
+    background: white;
+}
+
+.layui-tab-title li{
+    padding: 0px 20px;
+}
+
+.ul_list .layui-tab .layui-tab-title {
+    border:none;
+}
+
+.ul_list .layui-tab .layui-this{
+    background: #ba070f !important;
+    color: white;
+}
+
+.ul_list .layui-tab .layui-this::after {
+    border: none !important;
+}
+
+.main_content {
+    padding: 0px 20px;
+    min-height: 100px;
+    position: relative;
+}
+
+.main_content li {
+    display: inline-block;
+    width: 188px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.main_content li a {
+    display: block;
+    width: 94%;
+    margin: 0 auto;
+    height: 100%;
+    border: 1px solid #e7e7e7;
+}
+
+.main_content li a img {
+    width: 100%;
+    height: 90px;
+}
+
+.main_content li a p {
+    text-align: center;
+    width: 100%;
+    color: #979797;
+    padding: 5px 0px;
+}

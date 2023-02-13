@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/admin/servicesDetails/servicesDetails.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../../plugin/jQuery/jQuery.min.js"></script>
+    <script type="text/javascript" src="../../../../plugin/layui/layui.all.js"></script>
+    <script type="text/javascript" src="../../../../plugin/templateWeb/templateWeb.js"></script>
+    <script type="text/javascript" src="../../../../plugin/jQueryCookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/request.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/global.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/common.js"></script>
+    <script type="text/javascript" src="../../../../public/common/js/libs/publicModule.js"></script>
+    
+    <script type='text/javascript' src='../../../../libs/js/admin/servicesDetails/servicesDetails.js'></script>
+    <title></title>
+</head>
+<body>
+    <div class='iframe_title'>
+        <h2>
+            <p>
+                <i class='layui-icon'>&#xe68e;</i>
+                <span>当前位置：</span>
+            </p>
+            <a onclick="PreviousPage();">我的服务</a>
+            <i class='layui-icon'>&#xe602;</i>
+            <a onclick="PreviousPage();">我购买的服务</a>
+            <i class='layui-icon'>&#xe602;</i>
+            <a>服务详情</a>
+        </h2>
+    </div>
+    <div class='templet'>
+        <div data-loader="circle" class='loading hot-loading'></div>
+        <script id="user-cell" type="text/html">
+            <div class='header'>
+                <div class='layui_image'>
+                    <img src="{{logo}}" />
+                    <span>服务次数：{{servicesNum}}次</span>
+                </div>
+                <div class='right_main'>
+                    <span class='name'>{{name}}</span>
+                    <span>价格：<p>￥{{charge}}</p></span>
+                    <span>服务企业：{{userName}}</span>
+                    <span>服务方式：{{serviceObject}}</span>
+                    <span>服务对象：{{serviceMode}}</span>
+                    <span>服务类别：{{firstTypeName}} &nbsp; {{secondTypeName}}</span>
+                </div>
+            </div>
+            <div class='layui_tab'>
+                <div class="layui-tab layui-tab-card">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">服务详情</li>
+                        <li>服务记录</li>
+                    </ul>
+                    <div class="layui-tab-content" style="height: 100px;">
+                        <div class="layui-tab-item layui-show">
+                            <div class='tab_info'>
+                                <span>企业名称：{{userName}}</span>
+                                <span>服务名称：{{name}}</span>
+                                <span>收费标准：<p>￥{{charge}}</p></span>
+                                <span>服务类别：{{firstTypeName}} &nbsp; {{secondTypeName}}</span>
+                                <span>发布日期：{{createTime}}</span>
+                                <span>服务次数：{{servicesNum}}次</span>
+                            </div>
+                            <div class='introduce'>
+                                <h2>服务介绍</h2>
+                                <div class='introduce_info'></div>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item tabas">
+                            <ul></ul>
+                            <div id='laypage'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+    </div>
+    <script id="tab-cell" type="text/html">
+        {{each content as value i}}
+            <li>
+                <span>服务对象：{{value.userName}}</span>
+                <p>服务时间：{{value.createTime}}</p>
+            </li>
+        {{/each}}
+        {{if content.length === 0}}
+            <div class="nodata">
+                <i class="iconfont TanSantishi"></i>暂无数据 ！
+            </div>
+        {{/if}}
+    </script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+.nav_layui-this{
+    background-color: #ba070f;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.nav_layui-this a span {
+    margin-right: 8px;
+}
+
+body {
+    background-color: #f6f7fb;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.current h2 {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.DetailsMain {
+    width: 75%;
+    padding:20px;
+    margin: 20px 0px;
+    background: white;
+    float: left;
+}
+
+.tab {
+    /* border:1px solid #e6e6e6; */
+    min-height: 150px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.layui-tab {
+    margin:0px;
+}
+
+
+.layui-tab-content {
+    border-top:none;
+    display: inline-block;
+    width:97%;
+    min-height: 50px;
+    position: relative;
+    border:1px solid #e6e6e6;
+    border-top: none;
+}
+
+.layui-tab-content li {
+    float: left;
+    margin: 0px 10px;
+    padding: 8px 0px;
+    cursor: pointer;
+}
+
+.layui-tab-title .layui-this {
+    background: white;
+}
+
+.Main_list {
+    margin-top: 30px;
+}
+
+.Main_list h2 {
+    border-bottom:1px solid #de141d;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+}
+
+.Main_list h2 span {
+    display: inline-block;
+    padding: 0px 20px;
+    font-size: 18px;
+    background: #de141d;
+    color: white;
+}
+
+.Main_list .layui-form-item {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 300px;
+}
+
+.Main_list .layui-form-item input {
+    height: 30px;
+    font-size: 12px;
+    padding-right: 40px;
+}
+
+.Main_list h2 i {
+    position: absolute;
+    right: 15px;
+    top: 0px;
+    display: inline-block;
+    color: #666;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.Main_list ul {
+    min-height: 600px;
+    position: relative;
+    display: inline-block;
+    border:1px solid #e6e6e6;
+    margin-top: 20px;
+    width: 95.4%;
+    padding:20px;
+}
+
+.color {
+    color: #de141d;
+}
+
+
+#laypage{
+    float: right;
+    margin-top:20px;
+}
+
+
+.Main_list ul .QY {
+    border-bottom:1px solid #e6e6e6;
+    height: 180px;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.Main_list ul .QY:nth-last-child(1) {
+    margin-bottom: 0px;
+}
+
+.Main_list ul .QY img {
+    width: 150px;
+    height: 100%;
+    float: left;
+    margin-right: 20px;
+}
+
+.Main_list ul .QY .list {
+    float: left;
+    height: 100%;
+    width: 400px;
+    border-right:1px solid #e6e6e6;
+}
+
+.Main_list ul .QY .userlist{
+    float: right;
+    height: 100%;
+    width: 270px;
+}
+
+.Main_list ul .QY .userlist span {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.Main_list ul li .userlist p {
+    display:block;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.Main_list ul .QY .userlist p a {
+    color: #308bf3 !important;
+}
+
+
+.Main_list ul .QY .list span{
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    color: #666;
+}
+
+
+.Main_list ul .QY .list .layui-btn {
+    margin-top: 10px;
+    border:1px solid #de141d;
+    color: #de141d;
+    padding:0px 20px;
+}
+
+
+.DetailsMain_right {
+    background: white;
+    width:20%;
+    min-height: 500px;
+    float: right;
+    margin:20px 0px;
+    position: relative;
+}
+
+
+.DetailsMain_right h2 {
+    color: #de141d;
+    font-size: 16px;
+    padding: 10px 20px;
+    padding-left: 30px;
+    font-weight: 600;
+    position: relative;
+}
+
+.DetailsMain_right h2::after {
+    content: '';
+    width: 3px;
+    height: 19px;
+    background-color: #de141d;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+
+
+.DetailsMain_right ul li {
+    margin:0px 20px;
+    background: #f4f4f4;
+    height:270px;
+    margin-bottom: 20px;
+}
+
+.DetailsMain_right ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.DetailsMain_right ul li img {
+    width: 100%;
+    height: 170px;
+}
+
+.DetailsMain_right ul li span {
+    display: block;
+    height: 30px;
+    line-height: 35px;
+    text-align: left;
+    padding:0 20px;
+    font-size: 14px;
+}
+
+.Main_list ul .FW {
+    border-bottom:1px solid #e6e6e6;
+    height: 180px;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.Main_list ul .FW:nth-last-child(1) {
+    margin-bottom: 0px;
+}
+
+.Main_list ul .FW img {
+    width: 150px;
+    height: 100%;
+    float: left;
+    margin-right: 20px;
+}
+
+.Main_list ul .FW .list {
+    height: 100%;
+    float: left;
+}
+
+.Main_list ul .flag .list {
+    height: 100%;
+    float: left;
+    width: 670px;
+}
+
+ 
+.Main_list ul .FW .userlist{
+    float: right;
+    height: 100%;
+    width: 300px;
+}
+
+.Main_list ul .FW .userlist span {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.Main_list ul .FW .userlist p {
+    display:block;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.Main_list ul .FW .userlist p a {
+    color: #308bf3 !important;
+}
+
+.Main_list ul .FW .content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    display: inline-block;
+    height:70px !important;
+}
+
+
+.Main_list ul .FW .list span{
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    color: #666;
+}
+
+.Main_list ul .FW .list span p {
+    color: #de141d;
+    display: inline-block;
+}
+
+.Main_list ul .FW .list .layui-btn {
+    margin-top: 10px;
+    border:1px solid #de141d;
+    color: #de141d;
+    padding:0px 20px;
+}
+

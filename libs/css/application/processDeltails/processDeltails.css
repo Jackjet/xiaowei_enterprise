@@ -1,0 +1,88 @@
+body {
+    background-color: #f6f7fb;
+}
+
+.nav_layui-this{
+    background-color: #ba070f;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.nav_layui-this a span {
+   margin-right: 8px;
+}
+
+
+.current h2 {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.current h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 p i {
+    margin-right: 5px;
+}
+
+.current h2 a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.current h2 i {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.main_process {
+    min-height: 300px;
+    background: white;
+    margin-top: 20px;
+    position: relative;
+}
+.main_process .tit {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}
+
+.main_process {
+    padding: 20px 20px;
+}
+
+.main_process div {
+    width: 100% !important;
+}
+
+.main_process div div {
+    margin:0 !important;
+}
+
+.main_process div div span {
+    width: 100% !important;
+}
+
+.main_process img {
+    width: 100%;
+}
+
+.color {
+    color: #de141d;
+}

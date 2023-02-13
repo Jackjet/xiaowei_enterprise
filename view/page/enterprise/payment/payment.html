@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../plugin/payStep/step.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/enterprise/payment/payment.css" rel="stylesheet" type="text/css" />
+
+    
+    <script type="text/javascript" src="../../../../public/common/js/frameWork.js"></script>
+    <script type="text/javascript" src="../../../../plugin/payStep/step.js"></script>
+    <script type="text/javascript" src="../../../../plugin/qrcode/jquery.qrcode.min.js"></script>
+    <script type='text/javascript' src='../../../../libs/js/enterprise/payment/payment.js'></script>
+    <title>唐山小微公共服务平台</title>
+</head>
+
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <script id="nav-cell" type="text/html">
+                        {{each array as value i}}
+                            <li class="layui-nav-item {{value.this}}">
+                                <a href="{{value.url}}">{{value.title}}</a>
+                            </li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='layui-main cloud_main' style='margin-top:20px;'>
+        <div class='current'>
+            <h2>
+                <p>
+                    <i class='layui-icon'>&#xe68e;</i>您的位置：
+                </p>
+                <a href="../enterprise.html?level=U2Vjb25kbGV2ZWw=">企业上云</a>
+                <i class='layui-icon type0'>&#xe602;</i>
+                <a href="../service/service.html?level=TGV2ZWx0aHJlZQ==">云服务</a>
+                <i class='layui-icon type0'>&#xe602;</i>
+                <a onclick="ServiceDetails()">服务详情</a>
+                <i class='layui-icon type0'>&#xe602;</i>
+                <a href="javascript:;">核对订单</a>
+            </h2>
+        </div>
+        <div class='ul_list'>
+            <div class="layui-carousel" id="stepForm" lay-filter="stepForm" style="margin: 0 auto;">
+                <div carousel-item>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div style="text-align: center;margin-top: 120px;">
+                            <div>应付金额：<span class='mixins'></span></div>
+                            <div class='Qcode' style="margin-top: 30px;"></div>
+                            <div class='PayType'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

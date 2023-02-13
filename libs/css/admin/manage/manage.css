@@ -1,0 +1,255 @@
+body {
+    margin:0px;
+    padding: 0px;
+}
+
+.iframe_title {
+    height: 40px;
+    background: #fbfbfb;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    line-height: 40px;
+    color: #666;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.iframe_title h2 p {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+    vertical-align: top;
+}
+
+.iframe_title h2 p i {
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 39px;
+}
+
+.iframe_title h2 p a {
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(94, 94, 94);
+}
+
+.iframe_title h2 a {
+    display: inline-block;
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+    vertical-align: top;
+}
+
+.iframe_title h2 > i {
+    color: rgb(94, 94, 94);
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.templet {
+    padding:0px 20px;
+    color: #666;
+    margin-top: 30px;
+}
+
+.templet .layui-colla-title {
+    background: white !important;
+    padding: 0px !important;
+    border:1px solid #de141d;
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 15px;
+    color: #de141d;
+    margin: 20px 0px;
+}
+
+.layui-colla-content {
+    border:none;
+    border-left: 1px dashed #de141d;
+    margin: auto;
+    width: 787px;
+    min-height: 100px;
+}
+
+.layui-collapse {
+    border:none;
+}
+
+.layui-colla-item {
+    border: none;
+}
+
+.templet .layui-colla-title  i{
+    display: none !important;
+}
+
+
+.layui-form b {
+    color: #de141d;
+    margin-right: 3px;
+}
+
+.templet .layui-form input {
+    width: 50%;
+}
+
+.templet .layui-form textarea {
+    width: 70%;
+}
+
+.layui-upload-list {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.layui-upload-list span{
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    left: 0px;
+    bottom:0px;
+    background: #cc7478;
+    display: none;
+    z-index: 9999;
+}
+
+.layui-upload-list span i {
+    font-size: 24px !important;
+    color: white !important;
+}
+
+.layui-select-title input {
+    width: 100% !important;
+    color: #666;
+}
+
+.layui-form-select dl dd.layui-this {
+    background: #e4393c;
+}
+
+.layui-upload-drag .layui-icon {
+    color: #e4393c;
+}
+
+.layui-btn {
+    background: #e4393c;
+}
+
+.layui-upload-drag {
+    position: relative;
+    padding: 40px 60px;
+    border: 1px dashed #e2e2e2;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
+    color: #999;
+}
+
+.uploadImage .layui-input-block {
+    float: left;
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.enterprise .layui-form-item .layui-input-block {
+    line-height: 38px !important;
+}
+
+.contentBox1 .layui-form-label {
+    width: 126px !important;
+}
+
+.layui-form-radio>i:hover, .layui-form-radioed>i {
+    color: #de141d;
+}
+
+.layui-form-radio>i {
+    font-size: 18px;
+}
+
+.layui-card  {
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,.05)
+}
+
+.layui-colla-item .layui-card-header{
+    background: white !important;
+    padding: 0px !important;
+    border: 1px solid #de141d;
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 15px;
+    color: #de141d;
+    margin: 20px 0px;
+    cursor: pointer;
+}
+
+.layui-card .layui-card-header{
+    background: white !important;
+    padding: 0px !important;
+    border: 1px solid #de141d;
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 15px;
+    color: #de141d;
+    margin: 20px 0px;
+    cursor: pointer;
+}
+
+
+.layui-upload-list {
+    width: 100%;
+    margin:0px !important;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.layui-upload-list img {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    border:0px !important;
+}
+
+img[src=""],img:not([src]){
+    opacity:0;
+}
+
+.enterprise {
+    position: relative;
+}
+
+.CloudBox {
+    min-height: 890px;
+    position: relative;
+}
+
+.CloudBox .layui-input-block {
+    line-height: 36px !important;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+}

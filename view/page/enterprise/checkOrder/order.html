@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../plugin/step-lay/step.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../libs/css/enterprise/checkOrder/order.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../../../../public/common/js/frameWork.js"></script>
+    <script type="text/javascript" src="../../../../plugin/step-lay/step.js"></script>
+    <script type="text/javascript" src="../../../../plugin/qrcode/jquery.qrcode.min.js"></script>
+    <script type='text/javascript' src='../../../../libs/js/enterprise/checkOrder/order.js'></script>
+    <title>唐山小微公共服务平台</title>
+</head>
+
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                <ul class="layui-nav" lay-filter="">
+                    <script id="nav-cell" type="text/html">
+                        {{each array as value i}}
+                            <li class="layui-nav-item {{value.this}}">
+                                <a href="{{value.url}}">{{value.title}}</a>
+                            </li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='layui-main cloud_main' style='margin-top:20px;'>
+        <div class='current'>
+            <h2>
+                <p>
+                    <i class='layui-icon'>&#xe68e;</i>您的位置：
+                </p>
+                <a href="../enterprise.html?level=U2Vjb25kbGV2ZWw=">企业上云</a>
+                <i class='layui-icon type0'>&#xe602;</i>
+                <a href="../service/service.html?level=TGV2ZWx0aHJlZQ==">云服务</a>
+                <i class='layui-icon type0'>&#xe602;</i>
+                <a onclick="ServiceDetails()">服务详情</a>
+                <i class='layui-icon type0'>&#xe602;</i>
+                <a href="javascript:;">核对订单</a>
+            </h2>
+        </div>
+        <div class='ul_list'>
+            <div class="layui-carousel" id="stepForm" lay-filter="stepForm" style="margin: 0 auto;">
+                <div carousel-item>
+                    <div></div>
+                    <div>
+                        <div class='carousel_page'>
+                            <h2>填写并核对订单信息</h2>
+                            <div class='carousel_name'>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品名称</label>
+                                    <div class="layui-input-block">
+                                        <span class='name'></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='carousel_Price'>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品总价</label>
+                                    <div class="layui-input-block">
+                                        <span class='_Price'></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='carousel_name'>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品规格</label>
+                                    <div class="layui-input-block">
+                                        <span class='specifications' style='margin-top: 7px'></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='carousel_name'>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">商品周期</label>
+                                    <div class="layui-input-block">
+                                        <span class='zhouqi'></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='carousel_invoice invoice'>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">是否开具发票</label>
+                                    <div class="layui-input-block">
+                                        <span class="border" data-id='0' data-name='invoice'>否</span>
+                                        <span data-id='1' data-name='invoice'>是</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="IfShow" style="display: none;">
+                                <div class='carousel_invoice text_input'>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">纳税人识别号</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="number" lay-verify="required"
+                                                placeholder="请输入纳税人识别号" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='carousel_invoice text_input'>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">发票抬头</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="Look" lay-verify="required" placeholder="请输入发票抬头"
+                                                autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='carousel_PAY invoice'>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">支付方式</label>
+                                    <div class="layui-input-block">
+                                        <span data-name='pay' data-id='0'>
+                                            <i class='iconfont TanSanweixin1'></i>
+                                            <p>微信支付</p>
+                                        </span>
+                                        <span data-name='pay' data-id='1'>
+                                            <i class='iconfont TanSanzhifubao2'></i>
+                                            <p>支付宝支付</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="layui-btn button" lay-submit lay-filter="formStep2">
+                                提交订单
+                            </button>
+                            <button class="layui-btn cancel" lay-submit lay-filter="return">
+                                取消订单
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="text-align: center;margin-top: 120px;">
+                            <div>应付金额：<span class='mixins'></span></div>
+                            <div class='Qcode' style="margin-top: 30px;"></div>
+                            <div class='PayType'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

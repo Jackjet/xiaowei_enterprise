@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../public/common/css/frameWork.css" rel="stylesheet" type="text/css" />
+    <link href="../../../libs/css/enterprise/enterprise.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="../../../public/common/js/frameWork.js"></script>
+    <script type='text/javascript' src='../../../libs/js/enterprise/enterprise.js'></script>
+    <title>唐山小微公共服务平台</title>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <div class='layui-row'>
+            <div class='layui-main'>
+                    <ul class="layui-nav" lay-filter="">
+                        <script id="nav-cell" type="text/html">
+                            {{each array as value i}}
+                                <li class="layui-nav-item {{value.this}}">
+                                    <a href="{{value.url}}">{{value.title}}</a>
+                                </li>
+                            {{/each}}
+                        </script>
+                    </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='layui-row'>
+        <div class='layui-col-xs12 banner_main'>
+            <div class="layui-carousel" id="banner">
+                <div carousel-item></div>
+            </div>
+        </div>
+    </div>
+    <div class='layui-main' style='margin-top:20px;'>
+        <div class='layui-row'>
+            <div class='layui-col-xs6'>
+                <div class='left_banner'>
+                    <div class="layui-carousel" id="bannerSlisp">
+                        <div carousel-item></div>
+                    </div>
+                </div>
+            </div>
+            <div class='layui-col-xs6'>
+                <div class='right_list'>
+                    <h2>最新动态
+                        <span class='Industry_more' onclick="JumpUrldynamic('zxdt')">更多<i class='layui-icon'>&#xe65b;</i></span>
+                    </h2>
+                    <ul class='latest'>
+                        <div data-loader="circle" class='loading latest-loading'></div>
+                        <script id="latest-cell" type="text/html">
+                            {{each content as value i}}
+                                <li>
+                                    <a href="{{value.HttpUrl}}" class='layui-elip'>
+                                        <img src='{{value.image}}' />
+                                        <div>
+                                            <span class='layui-elip'>{{value.title}}</span>
+                                            <p>{{value.date}}</p>
+                                            <div class='digest layui-elip'>{{value.digest}}</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            {{/each}}
+                            {{if content.length === 0}}
+                                <div class="nodata">
+                                    <i class="iconfont TanSantishi"></i>暂无数据 ！
+                                </div>
+                            {{/if}}
+                        </script>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='layui-main mainContainer'>
+        <h2>云服务
+            <span onclick='JumpUrldynamic("yffs")' class='Industry_more'>更多<i class='layui-icon'>&#xe65b;</i></span>
+        </h2>
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title recomService">
+                <li class="layui-this" data-id=''>全部</li>
+                <script id="Service-cell" type="text/html">
+                    {{each content as value i}}
+                        <li data-id='{{value.id}}'>{{value.name}}</li>
+                    {{/each}}
+                </script>
+            </ul>
+            <div class="layui-tab-content main_content">
+                <div data-loader="circle" class='loading main-loading'></div>
+                <script id="main-cell" type="text/html">
+                    {{each content as value i}}
+                        <li data-id='{{value.id}}'>
+                            <a href="{{value.HttpUrl}}">
+                                <img src="{{value.logoImg}}"/>
+                                <p class='layui-elip'>{{value.name}}</p>
+                            </a>
+                        </li>
+                    {{/each}}
+                    {{if content.length === 0}}
+                        <div class="nodata">
+                            <i class="iconfont TanSantishi"></i>暂无数据 ！
+                        </div>
+                    {{/if}}
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class='layui-main' style='margin-top:20px;'>
+        <div class='layui-row'>
+            <div class='layui-col-xs6'>
+                <div class='case'>
+                    <h2>典型案例
+                        <span onclick="JumpUrldynamic('dxal')" class='Industry_more'>更多<i class='layui-icon'>&#xe65b;</i></span>
+                    </h2>
+                    <ul class='typical'>
+                        <div data-loader="circle" class='loading typical-loading'></div>
+                        <script id="typical-cell" type="text/html">
+                            {{each content as value i}}
+                                <li data-id='{{value.id}}'>
+                                    <a href="{{value.HttpUrl}}">
+                                        <span class='layui-elip'>{{value.title}}</span>
+                                        <p>{{value.date}}</p>
+                                    </a>
+                                </li>
+                            {{/each}}
+                            {{if content.length === 0}}
+                                <div class="nodata">
+                                    <i class="iconfont TanSantishi"></i>暂无数据 ！
+                                </div>
+                            {{/if}}
+                        </script>
+                    </ul>
+                </div>
+            </div>
+            <div class='layui-col-xs6'>
+                <div class='Service'>
+                    <div class="layui-tab layui-tab-brief " lay-filter="docDemoTabBrief">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this" data-id='0'>推荐服务商</li>
+                            <li data-id='1'>销售TOP5</li>
+                        </ul>
+                        <div class="layui-tab-content Service_tab">
+                            <div data-loader="circle" class="loading Service-loading"></div>
+                            <script id="Cservice-cell" type="text/html">
+                                {{if content}}
+                                    {{each content as value i}}
+                                        {{if classType === 1}}
+                                            <div class='recommend'>
+                                                <a href="javascript:;">
+                                                    <img src="{{value.logoImg}}">
+                                                    <span class='Industry_more layui-elip'>{{value.name}}</span>
+                                                    <span class='layui-elip'>服务时间：{{value.time}}</span>
+                                                </a>
+                                            </div>
+                                        {{else}}
+                                            <div class='TopMain'>
+                                                <a href="javascript:;">
+                                                    <img class="top-top" src="../../../public/images/{{value.topImg}}.png">
+                                                    <img class="top-logo" src="{{value.logoImg}}">
+                                                    <div class="top-info">
+                                                        <span class='layui-elip'>{{value.name}}</span>
+                                                        <p class='layui-elip'>服务时间：{{value.time}}</p>
+                                                    </div>
+                                                    <div class="top-line">
+                                                        <div class="layui-progress">
+                                                            <div class="layui-progress-bar layui-bg-red" lay-percent="{{value.lineWidth}}%"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="top-num">{{value.num}}</div>
+                                                </a>
+                                            </div>
+                                        {{/if}}
+                                    {{/each}}
+                                    {{if content.length === 0}}
+                                        <div class="nodata">
+                                            <i class="iconfont TanSantishi"></i>暂无数据 ！
+                                        </div>
+                                    {{/if}}
+                                {{else}}
+                                    {{each content as value i}}
+                                        <div class='TopMain'>
+                                            <a href="">
+                                                <img src="{{logoImg}}">
+                                                <div>
+                                                    <span class='Industry_more layui-elip'>{{name}}</span>
+                                                    <p class='Industry_more layui-elip'>{{content}}</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    {{/each}}
+                                {{/if}}
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='layui-main mainContainer'>
+        <h2>上云企业
+            <span class='Industry_more' onclick="JumpUrldynamic('syqy')">更多<i class='layui-icon'>&#xe65b;</i></span>
+        </h2>
+        <div>
+            <ul class="CludeEnterprise">
+                <div data-loader="circle" class='loading CludeEnterprise-loading'></div>
+                <script id="CludeEnterprise-cell" type="text/html">
+                    {{each content as value i}}
+                        <li data-id='{{value.id}}'>
+                            <a href="javascript:;">
+                                <img src="{{value.logoImg}}"/>
+                                <p class='layui-elip'>{{value.userName}}</p>
+                            </a>
+                        </li>
+                    {{/each}}
+                    {{if content.length === 0}}
+                        <div class="nodata">
+                            <i class="iconfont TanSantishi"></i>暂无数据 ！
+                        </div>
+                    {{/if}}
+                </script>
+            </div>
+        </div>
+    </div>
+    <footer style='margin-top: 20px;'></footer>
+</body>
+</html>
